@@ -1,0 +1,128 @@
+/* google fonts */
+@import url('https://fonts.googleapis.com/css2?family=Jost:ital,wght@0,600;1,600&display=swap');
+
+:root{
+    --header-height: 3.5rem;
+
+    /* colors */
+
+    --first-color:  hsl(268, 77%, 58%);
+    --first-color-dark:  hsl(268, 78%, 51%);
+    --first-color-light: hsl(268, 100%, 83%);
+    --title-color: hsl(0, 0%, 87%);
+    --text-color: hsl(0, 0%, 69%);
+    --body-color: hsl(200, 12%, 5%);
+    --container-color: hsl(200, 10%, 8%);
+    --border-color: hsl(0, 0%, 20%);
+    --white: #fff;
+
+    /* Font and typography */
+
+    --body-font: "Jost", sans-serif;
+    --big-font-size: 3rem;
+    --h1-font-size: 2.5rem;
+    --h2-font-size: 1.5rem;
+    --h3-font-size: 1.25rem;
+    --larger-font-size: 1.2rem;
+    --large-font-size: 1.125rem;
+
+    /* Font weight */
+    --weight-300: 300;
+    --weight-400: 400;
+    --weight-600: 600;
+
+}
+
+/* base */
+
+*{
+    margin: 0;
+    padding: 0;
+    box-sizing: border-box;
+}
+
+input,textarea,button,body{
+    font-family: var(--body-font);
+    font-size: var(--larger-font-size);
+}
+
+body{
+    background-color: var(--body-color);
+    color: var(--text-color);
+}
+
+input,
+textarea,
+button{
+    outline: none;
+    border: none;
+    background-color: transparent;
+}
+
+h1,h2,h3{
+    color: var(--title-color);
+    font-weight: var(--weight-600);
+}
+
+ul{
+    list-style: none;
+}
+
+a{
+    text-decoration: none;
+}
+
+img{
+    max-width: 100%;
+}
+
+/* REUSABLE CLASSES */
+.container{
+    max-width: 1200px;
+    margin-inline: auto;
+    padding-inline: 1rem;
+
+}
+
+/* HEADER */
+
+.header{
+    position: fixed;
+    background-color: var(--container-color);
+    top: 0;
+    left: 0;
+    width: 100%;
+    box-shadow: 0 3px 9px hsla(0, 0, 0, 0.05);
+}
+
+.nav, .nav__list{
+    display: flex;
+}
+
+.nav {
+    height: calc(var(--header-height) + 2.25rem);
+    /* background-color: var(--body-color); */
+    justify-content: space-between;
+    align-items: center;
+}
+
+.nav__logo{
+    color: var(--first-color);
+    font-size: var(--h2-font-size);
+}
+
+.nav__list{
+    column-gap: 1.5rem;
+}
+
+.nav__link{
+    color: var(--title-color);
+    transition: all 0.3s ease;
+}
+
+.active-link,
+.nav__link:hover{
+    color: var(--first-color);
+}
+
+
