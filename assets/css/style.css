@@ -74,6 +74,8 @@ a{
 
 img{
     max-width: 100%;
+    /* width: 200px;
+    height: 200px; */
 }
 
 /* REUSABLE CLASSES */
@@ -83,12 +85,16 @@ img{
     padding-inline: 1rem;
 
 }
+.grid{
+    display: grid;
+    gap: 1.5rem;;
+}
 
 /* HEADER */
 
 .header{
     position: fixed;
-    background-color: var(--container-color);
+    background-color: var(--body-color);
     top: 0;
     left: 0;
     width: 100%;
@@ -120,9 +126,114 @@ img{
     transition: all 0.3s ease;
 }
 
+/* active link */
+
 .active-link,
 .nav__link:hover{
     color: var(--first-color);
 }
 
+
+
+/* HOME SECTION */
+
+.home{
+    background-color: var(--container-color);
+    padding-block: 9rem 3rem;
+}
+
+.home__container{
+    grid-template-columns: repeat(2,1fr);
+    align-items: center;
+}
+
+.home__small{
+    font-size: var(--large-font-size);
+    font-weight: var(--weight-600);
+    letter-spacing: 1px;
+}
+
+.home__title{
+    font-size: var(--big-font-size);
+    line-height: 1.4;
+}
+
+.home__title span{
+    font-weight: var(--weight-300);
+}
+
+.home__description{
+    margin-block: 1.5rem 3rem;
+}
+
+.home__btns{
+    display: flex;
+    column-gap: 1rem;
+}
+
+.home__img-warpper{
+    margin-inline: auto 2rem;
+    position: relative;
+}
+
+/* .home__img-warpper::before,
+.home__img-warpper::after{
+    content: '';
+    position: absolute;
+    inset: 0;
+}
+
+.home__img-warpper::before{
+    background-color: var(--first-color-light);
+}
+
+.home__img-warpper::after{
+    background-color: var(--first-color);
+}
+
+
+.home__img{
+    z-index: 10;
+    position: relative;
+    vertical-align: middle;
+} */
+
+.home__img{
+    width: 250px;
+    height: 250px;
+    border-radius: 16px;
+}
+
+
+
+
+/* BUTTONS */
+
+.btn{
+    display: inline-block;
+    background-color: var(--first-color);
+    border: 1px solid var(--first-color);
+    color: var(--white);
+    padding: 0.9rem 2.5rem;
+    font-size: var(--large-font-size);
+    border-radius: 0.5rem;
+    transition: all 0.5s ease;
+}
+
+.btn--transparent{
+    background-color: transparent;
+    color: var(--first-color);
+}
+
+/* buttons hover */
+
+.btn:hover{
+    background-color: var(--first-color-dark);
+    color: var(--white)
+}
+
+.btn--transparent:hover{
+    background-color: var(--first-color);
+    color: var(--white);
+}
 
