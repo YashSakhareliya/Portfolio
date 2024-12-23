@@ -1,0 +1,198 @@
+<!DOCTYPE html>
+<html lang="en">
+  <head>
+    <meta charset="UTF-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <title>My Portfolio</title>
+    <link rel="stylesheet" href="/styles/base.css" />
+    <link rel="stylesheet" href="/styles/variables.css" />
+    <link rel="stylesheet" href="/styles/components/navigation.css" />
+    <link rel="stylesheet" href="/styles/components/sections.css" />
+    <link rel="stylesheet" href="/styles/components/theme-toggle.css" />
+    <link rel="stylesheet" href="/styles/components/about.css" />
+    <link rel="stylesheet" href="/styles/components/buttons.css" />
+    <link rel="stylesheet" href="/styles/components/forms.css" />
+    <link rel="stylesheet" href="/styles/components/animations.css" />
+    <link rel="stylesheet" href="/styles/components/footer.css" />
+    <link
+      rel="stylesheet"
+      href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.0.0/css/all.min.css"
+    />
+  </head>
+  <body style="visibility: hidden">
+    <header>
+      <nav class="navbar">
+        <div class="logo">Portfolio</div>
+        <div class="nav-container">
+          <ul class="nav-links">
+            <li><a href="#home" class="active">Home</a></li>
+            <li><a href="#about">About</a></li>
+            <li><a href="#projects">Projects</a></li>
+            <li><a href="#contact">Contact</a></li>
+          </ul>
+        </div>
+        <div class="hamburger">
+          <span></span>
+          <span></span>
+          <span></span>
+        </div>
+      </nav>
+    </header>
+
+    <main>
+      <!-- Hero section remains unchanged -->
+      <section id="home" class="hero">
+        <div class="hero-content">
+          <div class="hero-text animate-on-scroll">
+            <h1>Welcome to My Portfolio</h1>
+            <p>Full-Stack Developer & Designer</p>
+            <div class="cta-buttons">
+              <a href="#projects" class="btn primary">View Projects</a>
+              <a href="#contact" class="btn secondary">Contact Me</a>
+            </div>
+          </div>
+          <div class="hero-image animate-on-scroll">
+            <div class="placeholder-image">
+              <i class="fas fa-user-circle"></i>
+            </div>
+          </div>
+        </div>
+      </section>
+
+      <section id="about" class="about">
+        <h2 class="section-title">About Me</h2>
+        <div class="about-content">
+          <div class="about-text animate-on-scroll">
+            <div class="about-me-grid">
+              <div class="about-me-category">
+                <h3>Who I Am</h3>
+                <p>
+                Full-stack developer passionate about creating beautiful and
+                functional web applications.
+                </p>
+                
+              </div>
+              <div class="about-me-category">
+                <h3>Education</h3>
+                <p>
+                  Computer Science graduate with a focus on modern web technologies
+                  and user experience design.
+                  </p>
+              </div>
+            </div>
+          </div>
+          <div class="skills-container animate-on-scroll">
+            <h3>Skills & Technologies</h3>
+            <div class="skills-grid">
+              <div class="skill-category">
+                <h4>Frontend</h4>
+                <ul>
+                  <li><i class="fab fa-html5"></i> HTML5</li>
+                  <li><i class="fab fa-css3-alt"></i> CSS3</li>
+                  <li><i class="fab fa-js"></i> JavaScript</li>
+                  <li><i class="fab fa-react"></i> React</li>
+                </ul>
+              </div>
+              <div class="skill-category">
+                <h4>Backend</h4>
+                <ul>
+                  <li><i class="fab fa-node"></i> Node.js</li>
+                  <li><i class="fas fa-database"></i> SQL</li>
+                  <li><i class="fas fa-server"></i> REST APIs</li>
+                </ul>
+              </div>
+              <div class="skill-category">
+                <h4>Tools</h4>
+                <ul>
+                  <li><i class="fab fa-git-alt"></i> Git</li>
+                  <li><i class="fab fa-docker"></i> Docker</li>
+                  <li><i class="fas fa-terminal"></i> CLI</li>
+                </ul>
+              </div>
+            </div>
+          </div>
+        </div>
+      </section>
+
+      <section id="projects" class="projects">
+        <h2 class="section-title">My Projects</h2>
+        <div class="projects-grid">
+          <div class="project-card animate-on-scroll">
+            <div class="project-image">
+              <img src="placeholder-1.jpg" alt="Project 1" />
+            </div>
+            <div class="project-content">
+              <h3>E-Commerce Platform</h3>
+              <p>
+                A full-stack e-commerce solution built with React and Node.js
+              </p>
+              <div class="project-tech">
+                <span>React</span>
+                <span>Node.js</span>
+                <span>MongoDB</span>
+              </div>
+              <div class="project-links">
+                <a href="#" class="btn primary">Live Demo</a>
+                <a href="#" class="btn secondary">Source Code</a>
+              </div>
+            </div>
+          </div>
+          <!-- Add more project cards as needed -->
+        </div>
+      </section>
+
+      <!-- Contact section remains unchanged -->
+      <section id="contact" class="contact">
+        <h2 class="section-title">Contact Me</h2>
+        <div class="contact-content">
+          <form id="contact-form" class="animate-on-scroll">
+            <div class="form-group">
+              <input type="text" id="name" required placeholder=" " />
+              <label for="name">Name</label>
+            </div>
+            <div class="form-group">
+              <input type="email" id="email" required placeholder=" " />
+              <label for="email">Email</label>
+            </div>
+            <div class="form-group">
+              <textarea id="message" required placeholder=" "></textarea>
+              <label for="message">Message</label>
+            </div>
+            <button type="submit" class="btn primary">Send Message</button>
+          </form>
+        </div>
+      </section>
+    </main>
+
+    <footer class="footer">
+      <div class="footer-content">
+        <div class="footer-links">
+          <a
+            href="https://github.com/yourusername"
+            target="_blank"
+            rel="noopener"
+          >
+            <i class="fab fa-github"></i>
+          </a>
+          <a
+            href="https://linkedin.com/in/yourusername"
+            target="_blank"
+            rel="noopener"
+          >
+            <i class="fab fa-linkedin"></i>
+          </a>
+          <a
+            href="https://twitter.com/yourusername"
+            target="_blank"
+            rel="noopener"
+          >
+            <i class="fab fa-twitter"></i>
+          </a>
+        </div>
+        <p class="footer-text">&copy; 2024 Your Name. All rights reserved.</p>
+      </div>
+    </footer>
+
+    <script type="module" src="/scripts/main.js"></script>
+  </body>
+</html>
