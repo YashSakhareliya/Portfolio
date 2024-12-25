@@ -34,5 +34,5 @@ export function toggleTheme(currentTheme) {
 
 // Get icon class based on theme
 export function getThemeIcon(theme) {
-  return theme === THEMES.LIGHT ? 'fa-moon' : 'fa-sun';
+  return theme === THEMES.LIGHT ? 'fa-moon' : 'fa-moon';
 }
