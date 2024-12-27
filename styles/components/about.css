@@ -81,3 +81,14 @@
     color: var(--primary-color);
     width: 1.5rem;
 }
+
+@media (max-width: 768px) {
+    .about-me-grid {
+        grid-template-columns: 1fr;
+    }
+
+    .skills-grid {
+        grid-template-columns: 1fr;
+    }
+    
+}
