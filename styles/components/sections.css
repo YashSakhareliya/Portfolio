@@ -16,6 +16,10 @@
     align-items: center;
 }
 
+.hero-animated-text {
+    display: inline-block;
+}
+
 .hero-text h1 {
     font-size: 3rem;
     margin-bottom: 1rem;
