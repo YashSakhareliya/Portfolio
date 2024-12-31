@@ -134,6 +134,15 @@
     .hero-content {
         grid-template-columns: 1fr;
         text-align: center;
+        grid-template-rows: auto auto; /* Ensure proper stacking */
+    }
+
+    .hero-content > :nth-child(2) { /* Assuming the photo is the first child */
+        order: 1; /* Move photo to the top */
+    }
+
+    .hero-content > :nth-child(1) { /* Assuming the content is the second child */
+        order: 2; /* Move content below the photo */
     }
 
     .hero-text h1 {
