@@ -11,10 +11,12 @@ function App() {
         {/* Preaload coming soon */}
 
         {/* main content */}
-        <div className="transition-colors">
-
+        <div className="transition-colors duration-300">
+          <div className="bg-white dark:bg-gray-950 text-gray-950 dark:text-gray-50">
+            <Navbar />
+          </div>
         </div>
-        <Navbar />
+
       </div>
     </BrowserRouter>
   )
