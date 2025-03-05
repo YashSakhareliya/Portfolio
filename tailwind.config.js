@@ -71,6 +71,19 @@ export default {
           },
         },
       },
+
+      backgroundImage: {
+        'dark-gradient': 'linear-gradient(to bottom right, #0F172A, #1E1B4B)',
+        'dark-radial': 'radial-gradient(circle at center, #1E293B, #0F172A)',
+        'web3-gradient': 'linear-gradient(to right, #3B82F6, #8B5CF6, #EC4899)',
+      },
+      boxShadow: {
+        'web3': '0 0 15px rgba(59, 130, 246, 0.5)',
+        'web3-lg': '0 0 30px rgba(59, 130, 246, 0.5)',
+        'web3-purple': '0 0 15px rgba(139, 92, 246, 0.5)',
+        'web3-teal': '0 0 15px rgba(20, 184, 166, 0.5)',
+      },
+      
     },
   },
   plugins: [],
