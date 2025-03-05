@@ -6,7 +6,14 @@ function App() {
 
   return (
     <BrowserRouter>
-      <div className="">
+      <div className="relative w-full overflow-hidden">
+
+        {/* Preaload coming soon */}
+
+        {/* main content */}
+        <div className="transition-colors">
+
+        </div>
         <Navbar />
       </div>
     </BrowserRouter>
