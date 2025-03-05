@@ -1,12 +1,13 @@
 import React from "react";
 import { BrowserRouter } from "react-router-dom";
+import { Navbar } from "./components";
 
 function App() {
 
   return (
     <BrowserRouter>
       <div className="">
-        <h1>Hello This is Yash</h1>
+        <Navbar />
       </div>
     </BrowserRouter>
   )
