@@ -1,12 +1,14 @@
 import React from "react";
-
+import { BrowserRouter } from "react-router-dom";
 
 function App() {
 
   return (
-    <div className="">
-      <h1>Hello This is Yash</h1>
-    </div>
+    <BrowserRouter>
+      <div className="">
+        <h1>Hello This is Yash</h1>
+      </div>
+    </BrowserRouter>
   )
 }
 
