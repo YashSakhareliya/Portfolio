@@ -1,3 +1,35 @@
 @tailwind base;
 @tailwind components;
 @tailwind utilities;
+
+
+@layer utilities {
+    .grid-cols-52 {
+      grid-template-columns: repeat(52, minmax(0, 1fr));
+    }
+    .grid-rows-7 {
+      grid-template-rows: repeat(7, minmax(0, 1fr));
+    }
+  }
+  
+  /* Prevent horizontal overflow */
+  html, body {
+    overflow-x: hidden;
+    max-width: 100%;
+  }
+  
+  /* Container width control */
+  .container {
+    max-width: 1280px !important;
+    width: 100%;
+    margin-left: auto;
+    margin-right: auto;
+    padding-left: 1rem;
+    padding-right: 1rem;
+  }
+  
+  @media (min-width: 1536px) {
+    .container {
+      max-width: 1280px !important;
+    }
+  }
