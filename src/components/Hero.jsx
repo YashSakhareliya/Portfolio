@@ -87,6 +87,7 @@ const Hero = () => {
         <div className='container mx-auto px-4 pt-32 pb-20'>
             <div className='flex flex-col lg:flex-row items-center justify-between'>
                 {/* Left content */}
+
                 <motion.div
                  initial={{ opacity: 0, y: 20 }}
                  animate={{ opacity: 1, y: 0 }}
@@ -218,7 +219,7 @@ const Hero = () => {
                     Specializing in modern web applications, AI solutions, and
                     interactive user interfaces.
                     </motion.p>
-
+                    {/* hero button */}
                     <motion.div
                     initial={{ opacity: 0, y: 20 }}
                     animate={{ opacity: 1, y: 0 }}
@@ -256,6 +257,155 @@ const Hero = () => {
 
                 </motion.div>
 
+                {/* right content */}
+
+                <motion.div
+                initial={{ opacity: 0, scale: 0.9 }}
+                animate={{ opacity: 1, scale: 1 }}
+                transition={{ delay: 0.3, duration: 0.8 }}
+                className="lg:w-1/2 mt-12 lg:mt-0 z-10"
+                >
+                    <div className="relative w-full h-[500px] flex items-center justify-center">
+                    {/* Abstract animated shapes */}
+                    <div className="relative w-full h-full">
+                        {/* Large circle */}
+                        <motion.div
+                        className={`absolute top-1/2 left-1/2 transform -translate-x-1/2 -translate-y-1/2 w-64 h-64 rounded-full ${
+                            isDarkMode ? 'bg-dark-bg-tertiary/30' : 'bg-blue-100/30'
+                        }`}
+                        animate={{
+                            scale: [1, 1.05, 1],
+                            rotate: [0, 5, 0],
+                        }}
+                        transition={{
+                            duration: 8,
+                            repeat: Infinity,
+                            ease: 'easeInOut',
+                        }}
+                        />
+
+                        {/* Medium circle */}
+                        <motion.div
+                        className={`absolute top-1/2 left-1/2 transform -translate-x-1/2 -translate-y-1/2 w-48 h-48 rounded-full ${
+                            isDarkMode ? 'bg-web3-blue-dark/20' : 'bg-purple-100/30'
+                        }`}
+                        animate={{
+                            scale: [1, 1.1, 1],
+                            rotate: [0, -5, 0],
+                        }}
+                        transition={{
+                            duration: 6,
+                            repeat: Infinity,
+                            ease: 'easeInOut',
+                            delay: 0.5,
+                        }}
+                        />
+
+                        {/* Small circle */}
+                        <motion.div
+                        className={`absolute top-1/2 left-1/2 transform -translate-x-1/2 -translate-y-1/2 w-32 h-32 rounded-full ${
+                            isDarkMode ? 'bg-web3-purple-dark/20' : 'bg-blue-200/30'
+                        }`}
+                        animate={{
+                            scale: [1, 1.15, 1],
+                            rotate: [0, 10, 0],
+                        }}
+                        transition={{
+                            duration: 4,
+                            repeat: Infinity,
+                            ease: 'easeInOut',
+                            delay: 1,
+                        }}
+                        />
+
+                        {/* Floating elements */}
+                        {[...Array(6)].map((_, i) => (
+                        <motion.div
+                            key={i}
+                            className={`absolute w-${4 + i * 2} h-${4 + i * 2} ${
+                            i % 3 === 0
+                                ? isDarkMode
+                                ? 'bg-web3-blue-glow/30'
+                                : 'bg-blue-400/30'
+                                : i % 3 === 1
+                                ? isDarkMode
+                                ? 'bg-web3-purple-glow/30'
+                                : 'bg-purple-400/30'
+                                : isDarkMode
+                                ? 'bg-web3-teal-glow/30'
+                                : 'bg-teal-400/30'
+                            } rounded-lg`}
+                            style={{
+                            top: `${30 + Math.random() * 40}%`,
+                            left: `${30 + Math.random() * 40}%`,
+                            }}
+                            animate={{
+                            y: [0, -20, 0],
+                            x: [0, Math.random() * 20 - 10, 0],
+                            rotate: [0, 360],
+                            }}
+                            transition={{
+                            duration: 5 + Math.random() * 5,
+                            repeat: Infinity,
+                            ease: 'easeInOut',
+                            delay: i * 0.5,
+                            }}
+                        />
+                        ))}
+
+                        {/* Code symbols */}
+                        {['<Start />', '<>', '{ }', '( )', '//', '[]', '""', ' Function success() { return "Achieve your dreams!" }'].map((symbol, i) => (
+                        <motion.div
+                            key={i}
+                            className={`absolute text-xl font-mono ${
+                            isDarkMode
+                                ? 'text-web3-blue-light/70'
+                                : 'text-blue-600/70'
+                            }`}
+                            style={{
+                            top: `${20 + Math.random() * 60}%`,
+                            left: `${20 + Math.random() * 60}%`,
+                            }}
+                            animate={{
+                            y: [0, -30, 0],
+                            opacity: [0.3, 0.7, 0.3],
+                            }}
+                            transition={{
+                            duration: 4 + Math.random() * 4,
+                            repeat: Infinity,
+                            ease: 'easeInOut',
+                            delay: i * 0.7,
+                            }}
+                        >
+                            {symbol}
+                        </motion.div>
+                        ))}
+
+                        {/* Central glowing orb */}
+                        <motion.div
+                        className="absolute top-1/2 left-1/2 transform -translate-x-1/2 -translate-y-1/2 w-16 h-16 rounded-full"
+                        style={{
+                            background: isDarkMode
+                            ? 'radial-gradient(circle, rgba(96, 165, 250, 0.8) 0%, rgba(59, 130, 246, 0.3) 70%, rgba(37, 99, 235, 0) 100%)'
+                            : 'radial-gradient(circle, rgba(59, 130, 246, 0.8) 0%, rgba(37, 99, 235, 0.3) 70%, rgba(29, 78, 216, 0) 100%)',
+                            boxShadow: isDarkMode
+                            ? '0 0 30px rgba(96, 165, 250, 0.5)'
+                            : '0 0 30px rgba(59, 130, 246, 0.5)',
+                        }}
+                        animate={{
+                            scale: [1, 1.2, 1],
+                        }}
+                        transition={{
+                            duration: 3,
+                            repeat: Infinity,
+                            ease: 'easeInOut',
+                        }}
+                        />
+                    </div>
+                    </div>
+                </motion.div>
+
+                
             </div>
         </div>
         </div>
