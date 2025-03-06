@@ -1,4 +1,4 @@
-import React, { useState } from 'react'
+import React, { useState, useEffect } from 'react'
 import { motion, AnimatePresence } from 'framer-motion'
 import { useDispatch, useSelector } from 'react-redux'
 import { Menu, X, Home, User, Briefcase, Code, FileText, Mail, Moon, Sun, Zap} from 'lucide-react'
@@ -27,6 +27,31 @@ const Navbar = () => {
       dispatch(toggleTheme());
     }
 
+    // Handle scroll events
+    useEffect(() => {
+      const handleScroll = () => {
+        setIsScrolled(window.scrollY > 50);
+        
+        // Determine active section based on scroll position
+        const sections = navItems.map(item => item.name.toLowerCase());
+        const currentSection = sections.find(section => {
+          const element = document.getElementById(section);
+          if (element) {
+            const rect = element.getBoundingClientRect();
+            return rect.top <= 100 && rect.bottom >= 100;
+          }
+          return false;
+        });
+        
+        if (currentSection) {
+          setActiveSection(currentSection);
+        }
+      };
+
+      window.addEventListener('scroll', handleScroll);
+      return () => window.removeEventListener('scroll', handleScroll);
+    }, []);
+
   return (
     <>
     {/* desktop navbar */}
@@ -49,6 +74,10 @@ const Navbar = () => {
             className="flex items-center gap-2 text-2xl font-bold"
             whileHover={{ scale: 1.05 }}
             whileTap={{ scale: 0.95 }}
+            onClick={()=>{
+              setActiveSection('home')
+              window.scrollTo(0,0)
+            }}
             >
             <motion.div
               className={`relative w-10 h-10 flex items-center justify-center ${
