@@ -5,6 +5,15 @@ import { Send, Mail, Phone, MapPin, Github, Linkedin, Twitter, CheckCircle } fro
 
 const Contact = () => {
     const isDarkMode =  useSelector((state) => state.theme.darkMode)
+
+    const [formState, setFormState] = useState({
+        name: '',
+        email: '',
+        subject: '',
+        message: ''
+      });
+      const [isSubmitting, setIsSubmitting] = useState(false);
+      const [isSubmitted, setIsSubmitted] = useState(false);
   return (
     <div>
       
