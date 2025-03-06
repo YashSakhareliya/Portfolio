@@ -1,7 +1,5 @@
 import React, { useState } from 'react'
-import { Link, NavLink } from 'react-router-dom'
 import { motion, AnimatePresence } from 'framer-motion'
-import { forwardRef } from 'react'
 import { useDispatch, useSelector } from 'react-redux'
 import { Menu, X, Home, User, Briefcase, Code, FileText, Mail, Moon, Sun, Zap} from 'lucide-react'
 import { MotionNavLink } from './motion'
@@ -288,7 +286,7 @@ const Navbar = () => {
             </motion.div>
           </motion.div>
         )}
-      </AnimatePresence>
+    </AnimatePresence>
     </>
   )
 }
