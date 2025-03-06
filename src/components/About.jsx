@@ -222,10 +222,10 @@ const About = () => {
                 {/* Animated progress bars */}
                 <div className="mt-16 grid grid-cols-1 md:grid-cols-2 gap-8">
                     {[
-                    { label: 'Frontend Development', value: 95, color: 'from-blue-500 to-blue-600', darkColor: 'from-web3-blue-dark to-web3-blue-glow' },
-                    { label: 'Backend Development', value: 90, color: 'from-purple-500 to-purple-600', darkColor: 'from-web3-purple-dark to-web3-purple-glow' },
-                    { label: 'UI/UX Design', value: 85, color: 'from-green-500 to-green-600', darkColor: 'from-web3-teal-dark to-web3-teal-glow' },
-                    { label: 'AI & Machine Learning', value: 80, color: 'from-orange-500 to-orange-600', darkColor: 'from-amber-600 to-web3-amber-glow' }
+                        { label: 'AI & Machine Learning', value: 95, color: 'from-orange-500 to-orange-600', darkColor: 'from-amber-600 to-web3-amber-glow' },
+                        { label: 'Backend Development', value: 90, color: 'from-purple-500 to-purple-600', darkColor: 'from-web3-purple-dark to-web3-purple-glow' },
+                        { label: 'Frontend Development', value: 85, color: 'from-blue-500 to-blue-600', darkColor: 'from-web3-blue-dark to-web3-blue-glow' },
+                        { label: 'DevOps & Cloud', value: 80, color: 'from-green-500 to-green-600', darkColor: 'from-web3-teal-dark to-web3-teal-glow' }
                     ].map((skill, index) => (
                     <motion.div
                         key={skill.label}
@@ -257,7 +257,7 @@ const About = () => {
                     </motion.div>
                     ))}
                 </div>
-                
+
             </motion.div>
         </div>
     </section>
