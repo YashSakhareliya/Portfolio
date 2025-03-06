@@ -220,6 +220,43 @@ const About = () => {
                 </div>
                 
                 {/* Animated progress bars */}
+                <div className="mt-16 grid grid-cols-1 md:grid-cols-2 gap-8">
+                    {[
+                    { label: 'Frontend Development', value: 95, color: 'from-blue-500 to-blue-600', darkColor: 'from-web3-blue-dark to-web3-blue-glow' },
+                    { label: 'Backend Development', value: 90, color: 'from-purple-500 to-purple-600', darkColor: 'from-web3-purple-dark to-web3-purple-glow' },
+                    { label: 'UI/UX Design', value: 85, color: 'from-green-500 to-green-600', darkColor: 'from-web3-teal-dark to-web3-teal-glow' },
+                    { label: 'AI & Machine Learning', value: 80, color: 'from-orange-500 to-orange-600', darkColor: 'from-amber-600 to-web3-amber-glow' }
+                    ].map((skill, index) => (
+                    <motion.div
+                        key={skill.label}
+                        initial={{ opacity: 0, y: 20 }}
+                        whileInView={{ opacity: 1, y: 0 }}
+                        transition={{ duration: 0.5, delay: index * 0.1 }}
+                        viewport={{ once: true }}
+                        className={`${
+                        isDarkMode ? 'bg-dark-bg-tertiary' : 'bg-white'
+                        } rounded-xl p-6 shadow-lg`}
+                    >
+                        <div className="flex justify-between items-center mb-2">
+                        <h4 className="font-semibold">{skill.label}</h4>
+                        <span className="text-sm font-medium">{skill.value}%</span>
+                        </div>
+                        <div className={`h-3 ${
+                        isDarkMode ? 'bg-dark-bg-primary' : 'bg-gray-200'
+                        } rounded-full overflow-hidden`}>
+                        <motion.div
+                            initial={{ width: 0 }}
+                            whileInView={{ width: `${skill.value}%` }}
+                            transition={{ duration: 1, delay: 0.5 }}
+                            viewport={{ once: true }}
+                            className={`h-full bg-gradient-to-r ${
+                            isDarkMode ? skill.darkColor : skill.color
+                            } rounded-full`}
+                        />
+                        </div>
+                    </motion.div>
+                    ))}
+                </div>
                 
             </motion.div>
         </div>
