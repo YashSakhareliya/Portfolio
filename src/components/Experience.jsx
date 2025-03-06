@@ -48,6 +48,15 @@ const Experience = () => {
               My professional journey and educational background in technology and innovation.
             </p>
         </motion.div>
+
+        {/* Desktop timeline */}
+        <div className='hidden md:block relative'>
+          {/* Timeline line */}
+          <div className={`absolute left-1/2 transform -translate-x-1/2 h-full w-1 ${
+            isDarkMode ? 'bg-dark-bg-tertiary' : 'bg-blue-200'
+          }`} />
+
+        </div>
       </div>
     </section>
   )
