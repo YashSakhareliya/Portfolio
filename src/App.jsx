@@ -19,8 +19,12 @@ function App() {
             <Navbar />
 
             <main className="w-full">
+              <section id="home">
               <Hero />
+              </section>
+              <section id="about">
               <About />
+              </section>
             </main>
           </div>
         </div>
