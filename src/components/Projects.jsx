@@ -101,7 +101,7 @@ const Projects = () => {
     const regularProjects = filteredProjects.filter(project => !project.featured);
 
   return (
-    <section className={`py-20 px-4 ${isDarkMode ? 'bg-dark-bg-secondary' : 'bg-gray-50'}`}>
+    <section className={`py-20 px-4 ${isDarkMode ? 'bg-dark-bg-secondary text-gray-50' : 'bg-gray-50 text-gray-900'}`}>
         <div className='container mx-auto'>
             <motion.div
             initial={{ opacity: 0, y: 20 }}
@@ -115,6 +115,32 @@ const Projects = () => {
                 Explore my latest work across web development, AI, and open source contributions.
             </p>
             </motion.div>
+
+            {/* Project Categories */}
+            <div className="flex flex-wrap justify-center gap-4 mb-12">
+            {categories.map((category) => (
+                <motion.button
+                key={category.id}
+                whileHover={{ scale: 1.05 }}
+                whileTap={{ scale: 0.95 }}
+                onClick={() => setSelectedCategory(category.id)}
+                className={`px-6 py-2 rounded-full font-medium transition-colors flex items-center gap-2
+                    ${selectedCategory === category.id
+                    ? isDarkMode 
+                        ? 'bg-web3-gradient text-white shadow-web3' 
+                        : 'bg-blue-600 text-white'
+                    : isDarkMode 
+                        ? 'bg-dark-bg-tertiary hover:bg-dark-bg-tertiary/70' 
+                        : 'bg-white hover:bg-blue-50'
+                    }`}
+                >
+                {category.icon && <span>{category.icon}</span>}
+                {category.label}
+                </motion.button>
+            ))}
+            </div>
+
+
         </div>
     </section>
   )
