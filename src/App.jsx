@@ -3,6 +3,7 @@ import { BrowserRouter } from "react-router-dom";
 import { useSelector } from "react-redux";
 import { Navbar } from "./components";
 import Hero from "./components/Hero";
+import About from "./components/About";
 
 function App() {
   const darkMode = useSelector((state) => state.theme.darkMode)
@@ -19,6 +20,7 @@ function App() {
 
             <main className="w-full">
               <Hero />
+              <About />
             </main>
           </div>
         </div>
