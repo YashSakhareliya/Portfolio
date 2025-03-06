@@ -132,7 +132,96 @@ const About = () => {
             ))}
             </div>
 
-            
+            {/* state section */}
+
+            <motion.div
+            initial={{ opacity: 0, y: 20 }}
+            whileInView={{ opacity: 1, y: 0 }}
+            transition={{ duration: 0.8, delay: 0.2 }}
+            viewport={{ once: true }}
+            className="mt-20"
+            >
+                <h3 className="text-2xl font-bold mb-10 text-center">My Journey in Numbers</h3>
+
+                <div className="grid grid-cols-1 md:grid-cols-3 lg:grid-cols-5 gap-6">
+                    {stats.map((stat, index) => (
+                    <motion.div
+                        key={stat.label}
+                        initial={{ opacity: 0, scale: 0.8 }}
+                        whileInView={{ opacity: 1, scale: 1 }}
+                        transition={{ duration: 0.5, delay: index * 0.1 }}
+                        viewport={{ once: true }}
+                        whileHover={{ 
+                        y: -10,
+                        boxShadow: isDarkMode 
+                            ? "0 20px 25px -5px rgba(0, 0, 0, 0.3), 0 10px 10px -5px rgba(0, 0, 0, 0.2)" 
+                            : "0 20px 25px -5px rgba(0, 0, 0, 0.1), 0 10px 10px -5px rgba(0, 0, 0, 0.04)"
+                        }}
+                        className={`relative overflow-hidden rounded-2xl shadow-lg ${
+                        isDarkMode ? 'bg-dark-bg-tertiary' : 'bg-white'
+                        }`}
+                    >
+                        {/* Background gradient */}
+                        <div className={`absolute inset-0 bg-gradient-to-br ${
+                        isDarkMode ? stat.darkColor : stat.color
+                        } opacity-10`}></div>
+                        
+                        {/* Animated particles */}
+                        <div className="absolute inset-0 overflow-hidden pointer-events-none">
+                        {[...Array(5)].map((_, i) => (
+                            <motion.div
+                            key={i}
+                            className={`absolute w-1 h-1 rounded-full bg-current opacity-30`}
+                            style={{
+                                top: `${Math.random() * 100}%`,
+                                left: `${Math.random() * 100}%`,
+                            }}
+                            animate={{
+                                y: [0, Math.random() * -50 - 20],
+                                x: [0, (Math.random() - 0.5) * 30],
+                                opacity: [0.3, 0],
+                                scale: [1, 0],
+                            }}
+                            transition={{
+                                duration: 2 + Math.random() * 2,
+                                repeat: Infinity,
+                                delay: Math.random() * 2,
+                            }}
+                            />
+                        ))}
+                        </div>
+                        
+                        <div className="relative p-6 flex flex-col items-center text-center z-10">
+                        <div className={`p-3 rounded-full bg-gradient-to-br ${
+                            isDarkMode ? stat.darkColor : stat.color
+                        } text-white mb-4`}>
+                            {stat.icon}
+                        </div>
+                        
+                        <motion.div
+                            initial={{ opacity: 0, scale: 0.5 }}
+                            whileInView={{ opacity: 1, scale: 1 }}
+                            transition={{ 
+                            duration: 0.8, 
+                            delay: index * 0.1 + 0.3,
+                            type: "spring",
+                            stiffness: 100
+                            }}
+                            viewport={{ once: true }}
+                        >
+                            <span className="block text-4xl font-bold mb-1">{stat.value}</span>
+                        </motion.div>
+                        
+                        <h4 className="text-lg font-semibold mb-2">{stat.label}</h4>
+                        <p className={`text-sm ${isDarkMode ? 'text-gray-400' : 'text-gray-600'}`}>{stat.description}</p>
+                        </div>
+                    </motion.div>
+                    ))}
+                </div>
+                
+                {/* Animated progress bars */}
+                
+            </motion.div>
         </div>
     </section>
   )
