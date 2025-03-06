@@ -1,6 +1,6 @@
 import React, { useState } from 'react'
 import { Link, NavLink } from 'react-router-dom'
-import { motion } from 'framer-motion'
+import { motion, AnimatePresence } from 'framer-motion'
 import { forwardRef } from 'react'
 import { useDispatch, useSelector } from 'react-redux'
 import { Menu, X, Home, User, Briefcase, Code, FileText, Mail, Moon, Sun, Zap} from 'lucide-react'
@@ -185,6 +185,110 @@ const Navbar = () => {
           </div>
         </div>
     </motion.nav>
+
+    {/* mobile menu when toggle */}
+    <AnimatePresence>
+        {isMobileMenuOpen && (
+          <motion.div
+            initial={{ opacity: 0 }}
+            animate={{ opacity: 1 }}
+            exit={{ opacity: 0 }}
+            transition={{ duration: 0.2 }}
+            className="fixed inset-0 z-50 bg-black/60 backdrop-blur-sm md:hidden"
+            onClick={() => setIsMobileMenuOpen(false)}
+          >
+            <motion.div
+              initial={{ x: '100%' }}
+              animate={{ x: 0 }}
+              exit={{ x: '100%' }}
+              transition={{ type: 'spring', stiffness: 300, damping: 30 }}
+              className={`absolute right-0 top-0 bottom-0 w-3/4 max-w-sm ${
+                isDarkMode 
+                  ? 'bg-dark-bg-primary text-white' 
+                  : 'bg-white'
+              } shadow-xl p-6`}
+              onClick={(e) => e.stopPropagation()}
+            >
+              <div className="flex justify-between items-center mb-8">
+                <h2 className="text-xl font-bold">Menu</h2>
+                <motion.button
+                  onClick={() => setIsMobileMenuOpen(false)}
+                  whileHover={{ scale: 1.1, rotate: 5 }}
+                  whileTap={{ scale: 0.9 }}
+                  className={`p-2 rounded-full ${
+                    isDarkMode 
+                      ? 'bg-dark-bg-secondary' 
+                      : 'bg-gray-100'
+                  }`}
+                >
+                  <X className="w-5 h-5" />
+                </motion.button>
+              </div>
+
+              <div className="space-y-1">
+                {navItems.map((item, index) => {
+                  const isActive = activeSection === item.name.toLowerCase();
+                  return (
+                    <motion.a
+                      key={item.name}
+                      href={item.href}
+                      className={`flex items-center gap-3 px-4 py-3 rounded-xl ${
+                        isActive 
+                          ? isDarkMode 
+                            ? 'bg-web3-gradient text-white' 
+                            : 'bg-gradient-to-r from-blue-600 to-purple-600 text-white'
+                          : isDarkMode 
+                            ? 'hover:bg-dark-bg-secondary text-white' 
+                            : 'hover:bg-gray-100'
+                      }`}
+                      onClick={() => setIsMobileMenuOpen(false)}
+                      initial={{ opacity: 0, x: 20 }}
+                      animate={{ opacity: 1, x: 0 }}
+                      transition={{ delay: index * 0.05 }}
+                      whileHover={{ x: 5 }}
+                    >
+                      {item.icon}
+                      <span className="font-medium">{item.name}</span>
+                    </motion.a>
+                  );
+                })}
+              </div>
+
+              <motion.div
+                initial={{ opacity: 0 }}
+                animate={{ opacity: 1 }}
+                transition={{ delay: 0.3 }}
+                className="absolute bottom-8 left-6 right-6"
+              >
+                <div className={`p-4 rounded-xl ${
+                  isDarkMode 
+                    ? 'bg-dark-bg-secondary/50' 
+                    : 'bg-gradient-to-r from-blue-50 to-purple-50'
+                }`}>
+                  <p className={`text-sm ${
+                    isDarkMode 
+                      ? 'text-gray-300' 
+                      : 'text-gray-600'
+                  } mb-3`}>
+                    Ready to start a project?
+                  </p>
+                  <a
+                    href="#contact"
+                    onClick={() => setIsMobileMenuOpen(false)}
+                    className={`block w-full py-2.5 text-center text-white font-medium ${
+                      isDarkMode 
+                        ? 'bg-web3-gradient' 
+                        : 'bg-gradient-to-r from-blue-600 to-purple-600'
+                    } rounded-lg hover:opacity-90 transition-opacity`}
+                  >
+                    Get in Touch
+                  </a>
+                </div>
+              </motion.div>
+            </motion.div>
+          </motion.div>
+        )}
+      </AnimatePresence>
     </>
   )
 }
