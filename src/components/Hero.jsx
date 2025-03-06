@@ -4,6 +4,20 @@ import { toggleTheme } from '../stores/themeSlice';
 import { motion } from 'framer-motion';
 import { Moon, Sun, ArrowDown, Github, Linkedin, Twitter, CheckCircle } from 'lucide-react';
 
+const socialIcons = [
+    {
+    icon: <Github className="w-5 h-5" />,
+    url: 'https://github.com',
+    },
+    {
+    icon: <Linkedin className="w-5 h-5" />,
+    url: 'https://linkedin.com',
+    },
+    {
+    icon: <Twitter className="w-5 h-5" />,
+    url: 'https://twitter.com',
+    },
+]
 
 const Hero = () => {
     const isDarkMode = useSelector((state) => state.theme.darkMode)
@@ -51,6 +65,48 @@ const Hero = () => {
             />  
             ))}
 
+        </div>
+
+        <div className='container mx-auto px-4 pt-32 pb-20'>
+            <div className='flex flex-col lg:flex-row items-center justify-between'>
+                {/* Left content */}
+                <motion.div
+                 initial={{ opacity: 0, y: 20 }}
+                 animate={{ opacity: 1, y: 0 }}
+                 transition={{ duration: 0.8 }}
+                 className="lg:w-1/2 z-10"
+                >
+                    {/* icons */}
+                    <motion.div
+                    initial={{ opacity: 0, x: -20 }}
+                    animate={{ opacity: 1, x: 0 }}
+                    transition={{ delay: 1, duration: 0.5 }}
+                    className="flex gap-4 mb-8"
+                    >
+                        {socialIcons.map((social, index) => (
+                        <motion.a
+                        key={index}
+                        href={social.url}
+                        target="_blank"
+                        rel="noopener noreferrer"
+                        className={`p-3 ${
+                            isDarkMode
+                            ? 'bg-dark-bg-secondary/80 hover:bg-dark-bg-tertiary/80'
+                            : 'bg-white/80 hover:bg-gray-100/80'
+                        } rounded-full shadow-md hover:shadow-lg transition-all`}
+                        whileHover={{ y: -5, scale: 1.1 }}
+                        whileTap={{ scale: 0.9 }}
+                        initial={{ opacity: 0, y: 20 }}
+                        animate={{ opacity: 1, y: 0 }}
+                        transition={{ delay: 1 + index * 0.1, duration: 0.5 }}
+                        >
+                        {social.icon}
+                        </motion.a>
+                        ))}
+                    </motion.div>
+                </motion.div>
+
+            </div>
         </div>
         </div>
     )
