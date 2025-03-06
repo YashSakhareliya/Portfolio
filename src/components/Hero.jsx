@@ -84,7 +84,7 @@ const Hero = () => {
 
         </div>
 
-        <div className='container mx-auto px-4 pt-32 pb-20'>
+        <div className='container mx-auto px-4 lg:pt-32 pb-20 pt-24'>
             <div className='flex flex-col lg:flex-row items-center justify-between'>
                 {/* Left content */}
 
@@ -263,7 +263,7 @@ const Hero = () => {
                 initial={{ opacity: 0, scale: 0.9 }}
                 animate={{ opacity: 1, scale: 1 }}
                 transition={{ delay: 0.3, duration: 0.8 }}
-                className="lg:w-1/2 mt-12 lg:mt-0 z-10"
+                className="lg:w-1/2 mt-12 lg:mt-0 z-10 hidden lg:block"
                 >
                     <div className="relative w-full h-[500px] flex items-center justify-center">
                     {/* Abstract animated shapes */}
@@ -411,7 +411,7 @@ const Hero = () => {
             initial={{ opacity: 0, y: 10 }}
             animate={{ opacity: 1, y: 0 }}
             transition={{ delay: 1.5, duration: 0.5 }}
-            className="absolute bottom-8 left-1/2 transform -translate-x-1/2 flex flex-col items-center"
+            className="absolute bottom-8 hidden left-1/2  transform -translate-x-1/2 sm:flex flex-col items-center"
             >
                 <p
                     className={`text-sm ${
