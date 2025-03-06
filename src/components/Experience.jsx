@@ -1,4 +1,7 @@
 import React from 'react'
+import { useSelector } from 'react-redux';
+import { motion } from 'framer-motion';
+import { GraduationCap } from 'lucide-react';
 
 
 const experiences = [
@@ -28,10 +31,25 @@ const experiences = [
 ];
 
 const Experience = () => {
+
+  const isDarkMode = useSelector((state) => state.theme.darkMode)
   return (
-    <div>
-      
-    </div>
+    <section className={`py-20 px-4 ${isDarkMode ? 'bg-dark-bg-primary text-gray-50' : 'bg-white'}`}>
+      <div className='container mx-auto'>
+        <motion.div
+            initial={{ opacity: 0, y: 20 }}
+            whileInView={{ opacity: 1, y: 0 }}
+            transition={{ duration: 0.8 }}
+            viewport={{ once: true }}
+            className="text-center mb-16"
+        >
+            <h2 className="text-4xl font-bold mb-6">Experience & Education</h2>
+            <p className="max-w-2xl mx-auto text-lg opacity-80">
+              My professional journey and educational background in technology and innovation.
+            </p>
+        </motion.div>
+      </div>
+    </section>
   )
 }
 
