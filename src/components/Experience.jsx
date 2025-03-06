@@ -1,7 +1,7 @@
 import React from 'react'
 import { useSelector } from 'react-redux';
 import { motion } from 'framer-motion';
-import { GraduationCap,  Calendar, MapPin, Briefcase } from 'lucide-react';
+import { GraduationCap,  Calendar, MapPin, Briefcase, School } from 'lucide-react';
 
 
 const experiences = [
@@ -21,12 +21,12 @@ const experiences = [
     type: "education",
     title: "Higher Secondary Education (12th)",
     school: "SSVF - Fareni",
-    location: "Gujarat - Dhoraji",
+    location: "Dhoraji - Gujarat",
     date: "2020 - 2022",
     description:
       "Completed higher secondary education with a focus on Science. Developed a strong foundation in Mathematics, Physics, and Computer Science.",
     skills: ["Mathematics", "Physics", "Computer"], 
-    icon: <GraduationCap className="w-6 h-6" />,
+    icon: <School className="w-6 h-6" />,
   }
 ];
 
