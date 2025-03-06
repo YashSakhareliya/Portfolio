@@ -20,8 +20,8 @@ const projects = [
         description: 'Join thousands of collectors and enthusiasts in the most trusted online auction platform. Bid, win, and collect your next treasure.',
         tags: ['Express.js', 'Node.js', 'MongoDB', 'EJS'],
         links: {
-          github: 'https://github.com',
-          live: 'https://example.com'
+          github: 'https://github.com/YashSakhareliya/AuctionOasis',
+          live: 'https://auctionoasis.yashsakhareliya.in'
         },
         featured: true
     },
@@ -33,8 +33,8 @@ const projects = [
       description: 'Modern portfolio website with AI features and 3D animations using React, Three.js, and TailwindCSS.',
       tags: ['React', 'Three.js', 'TailwindCSS', 'Framer Motion'],
       links: {
-        github: 'https://github.com',
-        live: 'https://example.com'
+        github: 'https://github.com/YashSakhareliya/portfolio',
+        live: 'https://yashsakhareliya.in'
       },
       featured: true
     },
