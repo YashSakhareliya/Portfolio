@@ -10,7 +10,7 @@ const skills = [
       icon: <Code2 className="w-8 h-8" />,
       title: 'Frontend Development',
       description: 'Expert in React, TypeScript, and modern web technologies',
-      technologies: ['React', 'TypeScript', 'Tailwind CSS', 'Three.js']
+      technologies: ['React', 'JavaScript', 'Tailwind CSS', 'Three.js']
     },
     {
       icon: <Database className="w-8 h-8" />,
@@ -22,7 +22,7 @@ const skills = [
       icon: <Brain className="w-8 h-8" />,
       title: 'AI & Machine Learning',
       description: 'Implementing cutting-edge AI solutions',
-      technologies: ['TensorFlow', 'PyTorch', 'NLP', 'Computer Vision']
+      technologies: ['TensorFlow', 'Scikit-learn', 'NLP', 'Computer Vision']
     },
     {
       icon: <Globe2 className="w-8 h-8" />,
@@ -59,7 +59,7 @@ const stats = [
     },
     {
       icon: <BrainCircuit  className="w-8 h-8" />,
-      value: '600+',
+      value: '700+',
       label: 'Problems Solved',
       description: 'DSA & Competitive Programming',
       color: 'from-orange-500 to-orange-600',
@@ -68,7 +68,7 @@ const stats = [
     {
       icon: <Coffee className="w-8 h-8" />,
       value: '∞',
-      label: 'Cups of Coffee',
+      label: 'Cups of Tea',
       description: 'The secret ingredient',
       color: 'from-amber-500 to-amber-600',
       darkColor: 'from-web3-amber-dark to-web3-amber-glow'
