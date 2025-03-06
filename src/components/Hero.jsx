@@ -404,9 +404,35 @@ const Hero = () => {
                     </div>
                     </div>
                 </motion.div>
-
-                
             </div>
+
+            {/* Scroll indicator */}
+            <motion.div
+            initial={{ opacity: 0, y: 10 }}
+            animate={{ opacity: 1, y: 0 }}
+            transition={{ delay: 1.5, duration: 0.5 }}
+            className="absolute bottom-8 left-1/2 transform -translate-x-1/2 flex flex-col items-center"
+            >
+                <p
+                    className={`text-sm ${
+                    isDarkMode ? 'text-gray-400' : 'text-gray-600'
+                    } mb-2`}
+                >
+                    Scroll to explore
+                </p>
+                <motion.div
+                    animate={{ y: [0, 10, 0] }}
+                    transition={{ duration: 1.5, repeat: Infinity }}
+                >
+                    <a href="#about">
+                    <ArrowDown
+                        className={`w-5 h-5 ${
+                        isDarkMode ? 'text-web3-blue-glow' : 'text-blue-600'
+                        }`}
+                    />
+                    </a>
+                </motion.div>
+            </motion.div>
         </div>
         </div>
     )
