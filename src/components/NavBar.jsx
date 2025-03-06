@@ -25,7 +25,6 @@ const Navbar = () => {
     const [activeSection, setActiveSection] = useState('home');
 
     const handleToggleTheme  = () => {
-      console.log(isDarkMode)
       dispatch(toggleTheme());
     }
 
@@ -47,7 +46,7 @@ const Navbar = () => {
         <div className='container mx-auto flex justify-between items-center'>
             {/* logo */}
             <MotionNavLink
-            to='/home'
+            to='#home'
             className="flex items-center gap-2 text-2xl font-bold"
             whileHover={{ scale: 1.05 }}
             whileTap={{ scale: 0.95 }}
@@ -108,6 +107,9 @@ const Navbar = () => {
                     }`}
                     whileHover={{ scale: 1.05 }}
                     whileTap={{ scale: 0.95 }}
+                    onClick={()=>{
+                      setActiveSection(item.name.toLowerCase());
+                    }}
                     >
                       {/* if it is active */}
                     {isActive && (
