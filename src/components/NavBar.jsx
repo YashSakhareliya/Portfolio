@@ -74,6 +74,16 @@ const Navbar = () => {
             </span>
             </MotionNavLink>
 
+            {/* Desktop Menu */}
+            <div className='hidden md:flex items-center'>
+              <motion.div
+              className={`relative flex items-center ${ isDarkMode ? 'bg-dark-bg-secondary/30' : 'bg-white/10'} backdrop-blur-lg rounded-full p-1.5 mr-4`}
+              layout
+              >
+
+              </motion.div>
+
+            </div>
         </div>
     </motion.nav>
     </>
