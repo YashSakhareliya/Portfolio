@@ -101,7 +101,22 @@ const Projects = () => {
     const regularProjects = filteredProjects.filter(project => !project.featured);
 
   return (
-    <section></section>
+    <section className={`py-20 px-4 ${isDarkMode ? 'bg-dark-bg-secondary' : 'bg-gray-50'}`}>
+        <div className='container mx-auto'>
+            <motion.div
+            initial={{ opacity: 0, y: 20 }}
+            whileInView={{ opacity: 1, y: 0 }}
+            transition={{ duration: 0.8 }}
+            viewport={{ once: true }}
+            className="text-center mb-16"
+            >
+            <h2 className="text-4xl font-bold mb-6">My Projects</h2>
+            <p className="max-w-2xl mx-auto text-lg opacity-80">
+                Explore my latest work across web development, AI, and open source contributions.
+            </p>
+            </motion.div>
+        </div>
+    </section>
   )
 }
 
