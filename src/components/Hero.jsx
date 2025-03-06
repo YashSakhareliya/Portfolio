@@ -104,6 +104,75 @@ const Hero = () => {
                         </motion.a>
                         ))}
                     </motion.div>
+
+                    {/* portfolio text */}
+                    <motion.span
+                        initial={{ opacity: 0, y: 20 }}
+                        animate={{ opacity: 1, y: 0 }}
+                        transition={{ delay: 0.2, duration: 0.5 }}
+                        className={`inline-block px-4 py-1 rounded-full ${
+                            isDarkMode
+                            ? 'bg-dark-bg-secondary text-web3-blue-glow'
+                            : 'bg-blue-100 text-blue-600'
+                        } text-sm font-medium mb-4`}
+                    >
+                        Welcome to my portfolio
+                    </motion.span>
+
+                    <motion.h1
+                        initial={{ opacity: 0, y: 20 }}
+                        animate={{ opacity: 1, y: 0 }}
+                        transition={{ delay: 0.3, duration: 0.5 }}
+                        className="text-5xl md:text-6xl font-bold mb-4"
+                        >
+                        Hi, I'm{' '}
+                        <span
+                            className={`${
+                            isDarkMode
+                                ? 'bg-web3-gradient'
+                                : 'bg-gradient-to-r from-blue-600 to-purple-600'
+                            } bg-clip-text text-transparent`}
+                        >
+                            Yash Sakhareliya
+                        </span>
+                    </motion.h1>
+
+                    {/* Available for Work badge */}
+                    <motion.div
+                    initial={{ opacity: 0, x: -20 }}
+                    animate={{ opacity: 1, x: 0 }}
+                    transition={{ delay: 0.35, duration: 0.5 }}
+                    className="mb-4"
+                    >
+                        <motion.div
+                            className={`inline-flex items-center gap-1.5 px-3 py-1 rounded-full text-sm font-medium ${
+                            isDarkMode
+                                ? 'bg-green-900/30 text-green-400 border border-green-800/50'
+                                : 'bg-green-100 text-green-700 border border-green-200'
+                            }`}
+                            whileHover={{ scale: 1.05 }}
+                            animate={{
+                            boxShadow: [
+                                isDarkMode
+                                ? '0 0 0 rgba(16, 185, 129, 0)'
+                                : '0 0 0 rgba(16, 185, 129, 0)',
+                                isDarkMode
+                                ? '0 0 8px rgba(16, 185, 129, 0.5)'
+                                : '0 0 8px rgba(16, 185, 129, 0.3)',
+                                isDarkMode
+                                ? '0 0 0 rgba(16, 185, 129, 0)'
+                                : '0 0 0 rgba(16, 185, 129, 0)',
+                            ],
+                            }}
+                            transition={{
+                            repeat: Infinity,
+                            duration: 2,
+                            }}
+                        >
+                            <CheckCircle className="w-4 h-4" />
+                            <span>Available for Work</span>
+                        </motion.div>
+                    </motion.div>
                 </motion.div>
 
             </div>
