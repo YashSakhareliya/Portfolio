@@ -258,6 +258,88 @@ const About = () => {
                     ))}
                 </div>
 
+
+                    {/* GitHub contribution graph visualization */}
+                <motion.div
+                    initial={{ opacity: 0, y: 20 }}
+                    whileInView={{ opacity: 1, y: 0 }}
+                    transition={{ duration: 0.5, delay: 0.3 }}
+                    viewport={{ once: true }}
+                    className={`mt-16 ${
+                    isDarkMode ? 'bg-dark-bg-tertiary' : 'bg-white'
+                    } rounded-xl p-6 shadow-lg`}
+                >
+                    <h4 className="text-xl font-semibold mb-6 flex items-center gap-2">
+                    <Github className="w-5 h-5" />
+                    GitHub Contributions
+                    </h4>
+                    
+                    <div className="overflow-hidden">
+                    <div className="grid grid-cols-52 gap-1 h-24">
+                        {[...Array(52)].map((_, weekIndex) => (
+                        <div key={weekIndex} className="grid grid-rows-7 gap-1">
+                            {[...Array(7)].map((_, dayIndex) => {
+                            // Generate random contribution intensity (0-4)
+                            const intensity = Math.floor(Math.random() * 5);
+                            let bgColor;
+                            
+                            if (isDarkMode) {
+                                switch(intensity) {
+                                case 0: bgColor = 'bg-dark-bg-primary'; break;
+                                case 1: bgColor = 'bg-web3-teal-dark'; break;
+                                case 2: bgColor = 'bg-web3-teal/70'; break;
+                                case 3: bgColor = 'bg-web3-teal/80'; break;
+                                case 4: bgColor = 'bg-web3-teal-glow'; break;
+                                default: bgColor = 'bg-dark-bg-primary';
+                                }
+                            } else {
+                                switch(intensity) {
+                                case 0: bgColor = 'bg-gray-200'; break;
+                                case 1: bgColor = 'bg-green-200'; break;
+                                case 2: bgColor = 'bg-green-300'; break;
+                                case 3: bgColor = 'bg-green-400'; break;
+                                case 4: bgColor = 'bg-green-500'; break;
+                                default: bgColor = 'bg-gray-200';
+                                }
+                            }
+                            
+                            return (
+                                <motion.div
+                                key={dayIndex}
+                                initial={{ opacity: 0 }}
+                                whileInView={{ opacity: 1 }}
+                                transition={{ 
+                                    duration: 0.2, 
+                                    delay: (weekIndex * 7 + dayIndex) * 0.005 
+                                }}
+                                viewport={{ once: true }}
+                                className={`w-2 h-2 rounded-sm ${bgColor}`}
+                                whileHover={{ scale: 1.5 }}
+                                />
+                            );
+                            })}
+                        </div>
+                        ))}
+                    </div>
+                    </div>
+                    
+                    <div className={`mt-4 flex justify-between text-xs ${
+                    isDarkMode ? 'text-gray-400' : 'text-gray-500'
+                    }`}>
+                    <span>Jan</span>
+                    <span>Feb</span>
+                    <span>Mar</span>
+                    <span>Apr</span>
+                    <span>May</span>
+                    <span>Jun</span>
+                    <span>Jul</span>
+                    <span>Aug</span>
+                    <span>Sep</span>
+                    <span>Oct</span>
+                    <span>Nov</span>
+                    <span>Dec</span>
+                    </div>
+                </motion.div>
             </motion.div>
         </div>
     </section>
