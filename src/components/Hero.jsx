@@ -354,7 +354,7 @@ const Hero = () => {
                         ))}
 
                         {/* Code symbols */}
-                        {['<Start />', '<>', '{ }', '( )', '//', '[]', '""', ' Function success() { return "Achieve your dreams!" }'].map((symbol, i) => (
+                        {['<Start />', '<>', '{ }', '( )', '//', '[]', '""', 'Hello World'].map((symbol, i) => (
                         <motion.div
                             key={i}
                             className={`absolute text-xl font-mono ${
