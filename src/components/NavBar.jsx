@@ -4,8 +4,8 @@ import { motion } from 'framer-motion'
 import { forwardRef } from 'react'
 import { useDispatch, useSelector } from 'react-redux'
 import { Zap } from 'lucide-react'
+import { MotionNavLink } from './motion'
 
-const MotionNavLink = motion(forwardRef((props, ref) => <NavLink {...props} ref={ref} />))
 
 
 const Navbar = () => {
