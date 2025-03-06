@@ -140,6 +140,88 @@ const Projects = () => {
             ))}
             </div>
 
+            {/* Featured Projects */}
+            {featuredProjects.length > 0 && (
+            <div className="mb-16">
+                <h3 className="text-2xl font-semibold mb-8 flex items-center gap-2">
+                <Rocket className={`w-6 h-6 ${isDarkMode ? 'text-web3-blue-glow' : 'text-blue-600'}`} />
+                Featured Projects
+                </h3>
+                
+                <div className="grid grid-cols-1 lg:grid-cols-2 gap-8">
+                {featuredProjects.map((project) => (
+                    <motion.div
+                    key={project.id}
+                    initial={{ opacity: 0, y: 20 }}
+                    whileInView={{ opacity: 1, y: 0 }}
+                    transition={{ duration: 0.5 }}
+                    viewport={{ once: true }}
+                    onHoverStart={() => setHoveredProject(project.id)}
+                    onHoverEnd={() => setHoveredProject(null)}
+                    className={`${
+                        isDarkMode 
+                        ? 'bg-dark-bg-tertiary hover:shadow-web3' 
+                        : 'bg-white hover:shadow-xl'
+                    } rounded-xl overflow-hidden shadow-lg transition-all duration-300`}
+                    >
+                    <div className="relative h-64">
+                        <img
+                        src={project.image}
+                        alt={project.title}
+                        className="w-full h-full object-cover"
+                        />
+                        <motion.div
+                        initial={{ opacity: 0 }}
+                        animate={{ opacity: hoveredProject === project.id ? 1 : 0 }}
+                        className="absolute inset-0 bg-black/60 flex items-center justify-center gap-4"
+                        >
+                        <motion.a
+                            href={project.links.github}
+                            target="_blank"
+                            rel="noopener noreferrer"
+                            whileHover={{ scale: 1.1, y: -5 }}
+                            whileTap={{ scale: 0.9 }}
+                            className="p-3 bg-white/10 backdrop-blur-md rounded-full"
+                        >
+                            <Github className="w-6 h-6 text-white" />
+                        </motion.a>
+                        <motion.a
+                            href={project.links.live}
+                            target="_blank"
+                            rel="noopener noreferrer"
+                            whileHover={{ scale: 1.1, y: -5 }}
+                            whileTap={{ scale: 0.9 }}
+                            className="p-3 bg-white/10 backdrop-blur-md rounded-full"
+                        >
+                            <ExternalLink className="w-6 h-6 text-white" />
+                        </motion.a>
+                        </motion.div>
+                    </div>
+                    <div className="p-6">
+                        <h4 className="text-xl font-semibold mb-2">{project.title}</h4>
+                        <p className={`${isDarkMode ? 'text-gray-300' : 'text-gray-600'} mb-4`}>
+                        {project.description}
+                        </p>
+                        <div className="flex flex-wrap gap-2 mb-4">
+                        {project.tags.map((tag) => (
+                            <span
+                            key={tag}
+                            className={`text-sm px-3 py-1 rounded-full ${
+                                isDarkMode 
+                                ? 'bg-dark-bg-primary text-web3-blue-light' 
+                                : 'bg-blue-100 text-blue-800'
+                            }`}
+                            >
+                            {tag}
+                            </span>
+                        ))}
+                        </div>
+                    </div>
+                    </motion.div>
+                ))}
+                </div>
+            </div>
+            )}
 
         </div>
     </section>
