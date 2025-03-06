@@ -205,6 +205,55 @@ const Hero = () => {
                         ></span>
                     </motion.h2>
 
+                    {/* text hero */}
+                    <motion.p
+                    initial={{ opacity: 0, y: 20 }}
+                    animate={{ opacity: 1, y: 0 }}
+                    transition={{ delay: 0.5, duration: 0.5 }}
+                    className={`text-lg mb-8 ${
+                        isDarkMode ? 'text-gray-300' : 'text-gray-600'
+                    } max-w-lg`}
+                    >
+                    Crafting digital experiences with code and creativity.
+                    Specializing in modern web applications, AI solutions, and
+                    interactive user interfaces.
+                    </motion.p>
+
+                    <motion.div
+                    initial={{ opacity: 0, y: 20 }}
+                    animate={{ opacity: 1, y: 0 }}
+                    transition={{ delay: 0.6, duration: 0.5 }}
+                    className="flex flex-wrap gap-4"
+                    >
+                        <motion.a
+                            href="#projects"
+                            whileHover={{ scale: 1.05 }}
+                            whileTap={{ scale: 0.95 }}
+                            className={`px-8 py-3 rounded-full font-medium ${
+                            isDarkMode
+                                ? 'bg-web3-gradient'
+                                : 'bg-gradient-to-r from-blue-600 to-purple-600'
+                            } text-white shadow-lg ${
+                            isDarkMode ? 'shadow-web3-lg' : 'shadow-blue-500/20'
+                            }`}
+                        >
+                            Explore My Work
+                        </motion.a>
+
+                        <motion.a
+                            href="#contact"
+                            whileHover={{ scale: 1.05 }}
+                            whileTap={{ scale: 0.95 }}
+                            className={`px-8 py-3 rounded-full font-medium ${
+                            isDarkMode
+                                ? 'bg-dark-bg-secondary border-dark-bg-tertiary'
+                                : 'bg-white border-gray-200'
+                            } border shadow-md`}
+                        >
+                            Contact Me
+                        </motion.a>
+                    </motion.div>
+
                 </motion.div>
 
             </div>
