@@ -17,7 +17,7 @@ function App() {
           <div className={`${darkMode ? 'dark' : ''} bg-white dark:bg-gray-950 text-gray-950 dark:text-gray-50`}>
             <Navbar />
 
-            <main>
+            <main className="w-full">
               <Hero />
             </main>
           </div>
