@@ -1,7 +1,7 @@
 import React from "react";
 import { BrowserRouter } from "react-router-dom";
 import { useSelector } from "react-redux";
-import { Navbar } from "./components";
+import { Experience, Navbar } from "./components";
 import Hero from "./components/Hero";
 import About from "./components/About";
 import Projects from "./components/Projects";
@@ -28,6 +28,10 @@ function App() {
               </section>
               <section id="projects" className="w-full">
                 <Projects />
+              </section>
+
+              <section id="experience" className="w-full">
+                <Experience />
               </section>
             </main>
           </div>
