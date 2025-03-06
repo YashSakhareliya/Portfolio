@@ -4,6 +4,7 @@ import { useSelector } from "react-redux";
 import { Navbar } from "./components";
 import Hero from "./components/Hero";
 import About from "./components/About";
+import Projects from "./components/Projects";
 
 function App() {
   const darkMode = useSelector((state) => state.theme.darkMode)
@@ -20,10 +21,13 @@ function App() {
 
             <main className="w-full">
               <section id="home">
-              <Hero />
+                <Hero />
               </section>
               <section id="about">
-              <About />
+                <About />
+              </section>
+              <section id="projects" className="w-full">
+                <Projects />
               </section>
             </main>
           </div>
