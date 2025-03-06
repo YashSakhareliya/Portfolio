@@ -5,6 +5,7 @@ import { forwardRef } from 'react'
 import { useDispatch, useSelector } from 'react-redux'
 import { Menu, X, Home, User, Briefcase, Code, FileText, Mail, Moon, Sun, Zap} from 'lucide-react'
 import { MotionNavLink } from './motion'
+import { toggleTheme } from '../stores/themeSlice'
 
 const navItems = [
   { name: "Home", icon: <Home className="w-5 h-5" />, href: "#home" },
