@@ -1,5 +1,6 @@
 import React from 'react'
 import { motion } from 'framer-motion'
+import { useSelector } from 'react-redux';
 import { Code2, Database, Globe2, Brain, Github, Award, Users, Coffee,  } from 'lucide-react';
 
 
@@ -75,10 +76,28 @@ const stats = [
 ];
 
 const About = () => {
+    const isDarkMode = useSelector((state) => state.theme.darkMode)
+
   return (
-    <div>
-      About
-    </div>
+    <section  className={`py-20 px-4 ${isDarkMode ? 'bg-dark-bg-secondary text-gray-50' : 'bg-white'}`}>
+        <div className='container mx-auto'>
+            {/* About Heading Text */}
+            <motion.div
+            initial={{ opacity: 0, y: 20 }}
+            whileInView={{ opacity: 1, y: 0 }}
+            transition={{ duration: 0.8 }}
+            viewport={{ once: true }}
+            className="text-center mb-16"
+            >
+            <h2 className="text-4xl font-bold mb-6">About Me</h2>
+            <p className="max-w-2xl mx-auto text-lg opacity-80">
+                I'm a passionate developer with expertise in building modern web applications
+                and implementing AI solutions. With a strong foundation in both frontend and
+                backend technologies, I create seamless digital experiences that make a difference.
+            </p>
+            </motion.div>
+        </div>
+    </section>
   )
 }
 
