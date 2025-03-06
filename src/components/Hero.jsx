@@ -8,15 +8,15 @@ import Typed from 'typed.js';
 const socialIcons = [
     {
     icon: <Github className="w-5 h-5" />,
-    url: 'https://github.com',
+    url: 'https://github.com/Yashsakhareliya',
     },
     {
     icon: <Linkedin className="w-5 h-5" />,
-    url: 'https://linkedin.com',
+    url: 'https://www.linkedin.com/in/yash-sakhareliya/',
     },
     {
     icon: <Twitter className="w-5 h-5" />,
-    url: 'https://twitter.com',
+    url: 'https://x.com/SakhareliyaYash',
     },
 ]
 
