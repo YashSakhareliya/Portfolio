@@ -1,7 +1,7 @@
 import React from "react";
 import { BrowserRouter } from "react-router-dom";
 import { useSelector } from "react-redux";
-import { Experience, Navbar } from "./components";
+import { Blog, Experience, Navbar } from "./components";
 import Hero from "./components/Hero";
 import About from "./components/About";
 import Projects from "./components/Projects";
@@ -32,6 +32,10 @@ function App() {
 
               <section id="experience" className="w-full">
                 <Experience />
+              </section>
+
+              <section className="w-full" id="blog">
+                <Blog />
               </section>
             </main>
           </div>
