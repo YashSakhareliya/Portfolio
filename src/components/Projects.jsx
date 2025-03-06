@@ -1,5 +1,7 @@
-import React,{useState} from 'react'
+import React,{ useState } from 'react'
 import { useSelector } from 'react-redux';
+import { Github, ExternalLink, Code, Brain, Globe, Rocket } from 'lucide-react';
+import { motion, AnimatePresence } from 'framer-motion';
 
 // projects categories
 const categories = [
@@ -89,7 +91,7 @@ const Projects = () => {
     const isDarkMode = useSelector((state) => state.theme.darkMode)
 
     const [selectedCategory, setSelectedCategory] = useState('all');
-    const [hoveredProject, setHoveredProject] = useState<number | null>(null);
+    const [hoveredProject, setHoveredProject] = useState(null);
     
     const filteredProjects = selectedCategory === 'all'
         ? projects
@@ -99,9 +101,7 @@ const Projects = () => {
     const regularProjects = filteredProjects.filter(project => !project.featured);
 
   return (
-    <div>
-      Projects
-    </div>
+    <section></section>
   )
 }
 
