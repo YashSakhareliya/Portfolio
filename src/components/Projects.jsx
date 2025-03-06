@@ -1,4 +1,5 @@
-import React from 'react'
+import React,{useState} from 'react'
+import { useSelector } from 'react-redux';
 
 // projects categories
 const categories = [
@@ -85,6 +86,18 @@ const projects = [
     }
 ];
 const Projects = () => {
+    const isDarkMode = useSelector((state) => state.theme.darkMode)
+
+    const [selectedCategory, setSelectedCategory] = useState('all');
+    const [hoveredProject, setHoveredProject] = useState<number | null>(null);
+    
+    const filteredProjects = selectedCategory === 'all'
+        ? projects
+        : projects.filter(project => project.category === selectedCategory);
+    
+    const featuredProjects = filteredProjects.filter(project => project.featured);
+    const regularProjects = filteredProjects.filter(project => !project.featured);
+
   return (
     <div>
       Projects
