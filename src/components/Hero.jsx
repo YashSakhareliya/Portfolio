@@ -3,6 +3,7 @@ import { useDispatch, useSelector } from 'react-redux';
 import { toggleTheme } from '../stores/themeSlice';
 import { motion } from 'framer-motion';
 import { Moon, Sun, ArrowDown, Github, Linkedin, Twitter, CheckCircle } from 'lucide-react';
+import Typed from 'typed.js';
 
 const socialIcons = [
     {
@@ -22,6 +23,22 @@ const socialIcons = [
 const Hero = () => {
     const isDarkMode = useSelector((state) => state.theme.darkMode)
     const dispatch = useDispatch()
+
+    const el = useRef(null);
+
+    useEffect(()=>{
+        const typed = new Typed(el.current, {
+            strings :  ['Full Stack Developer', 'AI Enthusiast', 'Problem Solver'],
+            typeSpeed: 80,
+            backSpeed: 50,
+            loop: true,
+            backDelay: 1000,
+            startDelay: 1000,
+            showCursor: true,
+        })
+
+        return () => typed.destroy();
+    },[])
 
     return (
         <div
@@ -173,6 +190,21 @@ const Hero = () => {
                             <span>Available for Work</span>
                         </motion.div>
                     </motion.div>
+
+                    {/* running text */}
+                    <motion.h2
+                    initial={{ opacity: 0, y: 20 }}
+                    animate={{ opacity: 1, y: 0 }}
+                    transition={{ delay: 0.4, duration: 0.5 }}
+                    className="text-2xl mb-6"
+                    >
+                        I'm a{' '}
+                        <span
+                            ref={el}
+                            className={isDarkMode ? 'text-web3-blue-glow' : 'text-blue-600'}
+                        ></span>
+                    </motion.h2>
+
                 </motion.div>
 
             </div>
