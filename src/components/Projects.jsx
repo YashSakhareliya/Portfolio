@@ -223,6 +223,82 @@ const Projects = () => {
             </div>
             )}
 
+            {/* Regular Projects Grid */}
+            <div className="grid grid-cols-1 md:grid-cols-2 lg:grid-cols-3 gap-8">
+            <AnimatePresence mode="wait">
+                {regularProjects.map((project) => (
+                <motion.div
+                    key={project.id}
+                    layout
+                    initial={{ opacity: 0, scale: 0.9 }}
+                    animate={{ opacity: 1, scale: 1 }}
+                    exit={{ opacity: 0, scale: 0.9 }}
+                    transition={{ duration: 0.3 }}
+                    onHoverStart={() => setHoveredProject(project.id)}
+                    onHoverEnd={() => setHoveredProject(null)}
+                    className={`${
+                    isDarkMode 
+                        ? 'bg-dark-bg-tertiary hover:shadow-web3' 
+                        : 'bg-white hover:shadow-xl'
+                    } rounded-xl overflow-hidden shadow-lg transition-all duration-300`}
+                >
+                    <div className="relative h-48">
+                    <img
+                        src={project.image}
+                        alt={project.title}
+                        className="w-full h-full object-cover"
+                    />
+                    <motion.div
+                        initial={{ opacity: 0 }}
+                        animate={{ opacity: hoveredProject === project.id ? 1 : 0 }}
+                        className="absolute inset-0 bg-black/60 flex items-center justify-center gap-4"
+                    >
+                        <motion.a
+                        href={project.links.github}
+                        target="_blank"
+                        rel="noopener noreferrer"
+                        whileHover={{ scale: 1.1, y: -5 }}
+                        whileTap={{ scale: 0.9 }}
+                        className="p-3 bg-white/10 backdrop-blur-md rounded-full"
+                        >
+                        <Github className="w-6 h-6 text-white" />
+                        </motion.a>
+                        <motion.a
+                        href={project.links.live}
+                        target="_blank"
+                        rel="noopener noreferrer"
+                        whileHover={{ scale: 1.1, y: -5 }}
+                        whileTap={{ scale: 0.9 }}
+                        className="p-3 bg-white/10 backdrop-blur-md rounded-full"
+                        >
+                        <ExternalLink className="w-6 h-6 text-white" />
+                        </motion.a>
+                    </motion.div>
+                    </div>
+                    <div className="p-6">
+                    <h4 className="text-xl font-semibold mb-2">{project.title}</h4>
+                    <p className={`${isDarkMode ? 'text-gray-300' : 'text-gray-600'} mb-4`}>
+                        {project.description}
+                    </p>
+                    <div className="flex flex-wrap gap-2">
+                        {project.tags.map((tag) => (
+                        <span
+                            key={tag}
+                            className={`text-sm px-3 py-1 rounded-full ${
+                            isDarkMode 
+                                ? 'bg-dark-bg-primary text-web3-blue-light' 
+                                : 'bg-blue-100 text-blue-800'
+                            }`}
+                        >
+                            {tag}
+                        </span>
+                        ))}
+                    </div>
+                    </div>
+                </motion.div>
+                ))}
+            </AnimatePresence>
+            </div>
         </div>
     </section>
   )
