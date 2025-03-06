@@ -2,6 +2,7 @@ import React from "react";
 import { BrowserRouter } from "react-router-dom";
 import { useSelector } from "react-redux";
 import { Navbar } from "./components";
+import Hero from "./components/Hero";
 
 function App() {
   const darkMode = useSelector((state) => state.theme.darkMode)
@@ -15,6 +16,10 @@ function App() {
         <div className="transition-colors duration-300">
           <div className={`${darkMode ? 'dark' : ''} bg-white dark:bg-gray-950 text-gray-950 dark:text-gray-50`}>
             <Navbar />
+
+            <main>
+              <Hero />
+            </main>
           </div>
         </div>
 
