@@ -23,6 +23,7 @@ const Navbar = () => {
 
     const [isScrolled, setIsScrolled] = useState(false)
     const [activeSection, setActiveSection] = useState('home');
+    const [isMobileMenuOpen, setIsMobileMenuOpen] = useState(false);
 
     const handleToggleTheme  = () => {
       dispatch(toggleTheme());
@@ -149,6 +150,39 @@ const Navbar = () => {
               )}
               </motion.button>
             </div>
+
+            {/* mobile menu */}
+            <div className="flex items-center gap-4 md:hidden">
+            <motion.button
+              onClick={handleToggleTheme}
+              whileHover={{ scale: 1.1 }}
+              whileTap={{ scale: 0.9 }}
+              className={`p-2 rounded-full ${
+                isDarkMode 
+                  ? 'bg-dark-bg-secondary/30' 
+                  : 'bg-white/10'
+              } backdrop-blur-lg`}
+            >
+              {isDarkMode ? (
+                <Sun className="w-5 h-5 text-yellow-400" />
+              ) : (
+                <Moon className="w-5 h-5 text-blue-600" />
+              )}
+            </motion.button>
+            
+            <motion.button
+              onClick={() => setIsMobileMenuOpen(true)}
+              whileHover={{ scale: 1.1 }}
+              whileTap={{ scale: 0.9 }}
+              className={`p-2 rounded-full ${
+                isDarkMode 
+                  ? 'bg-dark-bg-secondary/30' 
+                  : 'bg-white/10'
+              } backdrop-blur-lg`}
+            >
+              <Menu className="w-6 h-6" />
+            </motion.button>
+          </div>
         </div>
     </motion.nav>
     </>
