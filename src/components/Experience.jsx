@@ -134,6 +134,90 @@ const Experience = () => {
           </div>
 
         </div>
+
+          {/* mobile timeline */}
+        <div className="md:hidden relative">
+          {/* Timeline line */}
+          <div className={`absolute left-6 top-0 bottom-0 w-1 ${
+            isDarkMode ? 'bg-dark-bg-tertiary' : 'bg-blue-200'
+          }`} />
+
+          <div className="space-y-10">
+            {experiences.map((experience, index) => (
+              <motion.div
+                key={experience.id}
+                initial={{ opacity: 0, x: -20 }}
+                whileInView={{ opacity: 1, x: 0 }}
+                transition={{ duration: 0.5, delay: index * 0.2 }}
+                viewport={{ once: true }}
+                className="relative pl-16"
+              >
+                {/* Timeline dot */}
+                <motion.div
+                  initial={{ scale: 0 }}
+                  whileInView={{ scale: 1 }}
+                  transition={{ duration: 0.5, delay: index * 0.2 }}
+                  viewport={{ once: true }}
+                  className={`absolute left-4 top-6 w-4 h-4 ${
+                    isDarkMode ? 'bg-web3-blue-glow' : 'bg-blue-600'
+                  } rounded-full z-10`}
+                />
+
+                {/* Content */}
+                <motion.div
+                  whileHover={{ scale: 1.02 }}
+                  className={`${
+                    isDarkMode ? 'bg-dark-bg-secondary' : 'bg-white'
+                  } p-5 rounded-xl shadow-lg`}
+                >
+                  <div className="flex items-center gap-3 mb-4">
+                    <div className={`p-2 ${
+                      isDarkMode ? 'bg-dark-bg-tertiary' : 'bg-blue-100'
+                    } rounded-lg`}>
+                      {experience.icon}
+                    </div>
+                    <div>
+                      <h3 className="text-lg font-semibold">{experience.title}</h3>
+                      <p className={`text-sm ${isDarkMode ? 'text-gray-400' : 'text-gray-600'}`}>{experience.company}</p>
+                    </div>
+                  </div>
+
+                  <div className="space-y-3">
+                    <div className={`flex flex-wrap items-center gap-2 text-sm ${isDarkMode ? 'text-gray-400' : 'text-gray-600'}`}>
+                      <div className="flex items-center">
+                        <Calendar className="w-4 h-4 mr-1" />
+                        <span>{experience.date}</span>
+                      </div>
+                      <div className="flex items-center">
+                        <MapPin className="w-4 h-4 mr-1" />
+                        <span>{experience.location}</span>
+                      </div>
+                    </div>
+
+                    <p className={`text-sm ${isDarkMode ? 'text-gray-300' : 'text-gray-700'}`}>
+                      {experience.description}
+                    </p>
+
+                    <div className="flex flex-wrap gap-2 mt-4">
+                      {experience.skills.map((skill) => (
+                        <span
+                          key={skill}
+                          className={`${
+                            isDarkMode 
+                              ? 'bg-dark-bg-tertiary text-web3-blue-light' 
+                              : 'bg-blue-100 text-blue-800'
+                          } text-xs px-2 py-1 rounded-full`}
+                        >
+                          {skill}
+                        </span>
+                      ))}
+                    </div>
+                  </div>
+                </motion.div>
+              </motion.div>
+            ))}
+          </div>
+        </div>
       </div>
     </section>
   )
