@@ -96,6 +96,43 @@ const About = () => {
                 backend technologies, I create seamless digital experiences that make a difference.
             </p>
             </motion.div>
+
+            <div className="grid grid-cols-1 md:grid-cols-2 lg:grid-cols-4 gap-8">
+            {skills.map((skill, index) => (
+                <motion.div
+                key={skill.title}
+                initial={{ opacity: 0, y: 20 }}
+                whileInView={{ opacity: 1, y: 0 }}
+                transition={{ duration: 0.5, delay: index * 0.1 }}
+                viewport={{ once: true }}
+                className={`${
+                    isDarkMode 
+                    ? 'bg-dark-bg-tertiary hover:shadow-web3' 
+                    : 'bg-white hover:shadow-xl'
+                } rounded-xl p-6 shadow-lg transition-shadow duration-300`}
+                >
+                <div className={`${isDarkMode ? 'text-web3-blue-glow' : 'text-blue-600'} mb-4`}>{skill.icon}</div>
+                <h3 className="text-xl font-semibold mb-2">{skill.title}</h3>
+                <p className={`${isDarkMode ? 'text-gray-300' : 'text-gray-600'} mb-4`}>{skill.description}</p>
+                <div className="flex flex-wrap gap-2">
+                    {skill.technologies.map((tech) => (
+                    <span
+                        key={tech}
+                        className={`${
+                        isDarkMode 
+                            ? 'bg-dark-bg-primary text-web3-blue-light' 
+                            : 'bg-blue-100 text-blue-800'
+                        } text-sm px-3 py-1 rounded-full`}
+                    >
+                        {tech}
+                    </span>
+                    ))}
+                </div>
+                </motion.div>
+            ))}
+            </div>
+
+            
         </div>
     </section>
   )
