@@ -1,7 +1,7 @@
 import React from 'react'
 import { motion } from 'framer-motion'
 import { useSelector } from 'react-redux';
-import { Code2, Database, Globe2, Brain, Github, Award, Users, Coffee,  } from 'lucide-react';
+import { Code2, Database, Globe2, Brain, Github, Award, Users, Coffee, BrainCircuit   } from 'lucide-react';
 
 
 
@@ -51,19 +51,19 @@ const stats = [
     },
     {
       icon: <Award className="w-8 h-8" />,
-      value: '5+',
+      value: '1+',
       label: 'Years Experience',
       description: 'In software development',
       color: 'from-green-500 to-green-600',
       darkColor: 'from-web3-teal-dark to-web3-teal-glow'
     },
     {
-      icon: <Users className="w-8 h-8" />,
-      value: '20+',
-      label: 'Happy Clients',
-      description: 'Across various industries',
+      icon: <BrainCircuit  className="w-8 h-8" />,
+      value: '600+',
+      label: 'Problems Solved',
+      description: 'DSA & Competitive Programming',
       color: 'from-orange-500 to-orange-600',
-      darkColor: 'from-amber-600 to-web3-amber-glow'
+      darkColor: 'from-indigo-600 to-web3-indigo-glow'
     },
     {
       icon: <Coffee className="w-8 h-8" />,
@@ -192,11 +192,11 @@ const About = () => {
                         </div>
                         
                         <div className="relative p-6 flex flex-col items-center text-center z-10">
-                        <div className={`p-3 rounded-full bg-gradient-to-br ${
-                            isDarkMode ? stat.darkColor : stat.color
-                        } text-white mb-4`}>
-                            {stat.icon}
-                        </div>
+                            <div className={`p-3 rounded-full bg-gradient-to-br ${
+                                isDarkMode ? stat.darkColor : stat.color
+                            } text-white mb-4`}>
+                                {stat.icon}
+                            </div>
                         
                         <motion.div
                             initial={{ opacity: 0, scale: 0.5 }}
