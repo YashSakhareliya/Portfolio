@@ -203,7 +203,7 @@ const Contact = () => {
                                 id="name"
                                 name="name"
                                 value={formState.name}
-                                // onChange={}
+                                onChange={handleChange}
                                 required
                                 placeholder='Enter your Good Name'
                                 className={`w-full px-4 py-2 rounded-lg border ${
@@ -228,7 +228,7 @@ const Contact = () => {
                                 id="email"
                                 name="email"
                                 value={formState.email}
-                                // onChange={handleChange}
+                                onChange={handleChange}
                                 placeholder='Enter your Email'
                                 required
                                 className={`w-full px-4 py-2 rounded-lg border ${
@@ -253,7 +253,7 @@ const Contact = () => {
                             id="subject"
                             name="subject"
                             value={formState.subject}
-                            // onChange={handleChange}
+                            onChange={handleChange}
                             placeholder='What is the subject?'
                             required
                             className={`w-full px-4 py-2 rounded-lg border ${
@@ -276,7 +276,7 @@ const Contact = () => {
                             id="message"
                             name="message"
                             value={formState.message}
-                            // onChange={handleChange}
+                            onChange={handleChange}
                             required
                             placeholder='Enter your message'
                             rows={4}
