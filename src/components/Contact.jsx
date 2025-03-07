@@ -142,6 +142,34 @@ const Contact = () => {
                 transition={{ duration: 0.5 }}
                 viewport={{ once: true }}
                 >
+                {/* Contact Form */}
+                    <form className='space-y-6'>
+                        <div className='grid grid-cols-1 lg:grid-cols-2 gap-6'>
+                            <motion.div
+                            initial={{ opacity: 0, y: 20 }}
+                            animate={{ opacity: 1, y: 0 }}
+                            transition={{ delay: 0.1 }}
+                            >
+                            <label htmlFor="name" className="block text-sm font-medium mb-2">
+                                Name
+                            </label>
+                            <input
+                                type="text"
+                                id="name"
+                                name="name"
+                                value={formState.name}
+                                // onChange={}
+                                required
+                                placeholder='Enter your Good Name'
+                                className={`w-full px-4 py-2 rounded-lg border ${
+                                isDarkMode 
+                                    ? 'border-dark-bg-tertiary bg-dark-bg-tertiary focus:ring-web3-blue-glow' 
+                                    : 'border-gray-300 bg-white focus:ring-blue-500'
+                                } focus:ring-2 focus:border-transparent`}
+                            />
+                            </motion.div>
+                        </div>
+                    </form>
 
                 </motion.div>
             </div>
