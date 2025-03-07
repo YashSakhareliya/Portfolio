@@ -168,6 +168,31 @@ const Contact = () => {
                                 } focus:ring-2 focus:border-transparent`}
                             />
                             </motion.div>
+
+
+                            <motion.div
+                            initial={{ opacity: 0, y: 20 }}
+                            animate={{ opacity: 1, y: 0 }}
+                            transition={{ delay: 0.2 }}
+                            >
+                            <label htmlFor="email" className="block text-sm font-medium mb-2">
+                                Email
+                            </label>
+                            <input
+                                type="email"
+                                id="email"
+                                name="email"
+                                value={formState.email}
+                                // onChange={handleChange}
+                                placeholder='Enter your Email'
+                                required
+                                className={`w-full px-4 py-2 rounded-lg border ${
+                                isDarkMode 
+                                    ? 'border-dark-bg-tertiary bg-dark-bg-tertiary focus:ring-web3-blue-glow' 
+                                    : 'border-gray-300 bg-white focus:ring-blue-500'
+                                } focus:ring-2 focus:border-transparent`}
+                            />
+                            </motion.div>
                         </div>
                     </form>
 
