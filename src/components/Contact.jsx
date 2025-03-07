@@ -18,6 +18,21 @@ const Contact = () => {
       const handleChange = (event) => {
         setFormState({...formState, [event.target.name]: event.target.value });
       };
+
+      const handleSubmit = async (e) => {
+        e.preventDefault();
+        setIsSubmitting(true);
+
+        // submit form
+
+        setIsSubmitting(false);
+        setIsSubmitted(true);
+        setFormState({ name: '', email: '', subject: '', message: '' });
+    
+        // Reset success message after 3 seconds
+        setTimeout(() => setIsSubmitted(false), 3000);
+
+      }
       
       
   return (
