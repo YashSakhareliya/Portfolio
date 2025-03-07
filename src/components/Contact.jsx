@@ -39,7 +39,58 @@ const Contact = () => {
                 viewport={{ once: true }}
                 className="space-y-8"
                 >
-
+                <div>
+                    <h3 className="text-2xl font-semibold mb-6">Contact Information</h3>
+                    <div className="space-y-4">
+                        <div className="flex items-center gap-4">
+                        <div className={`p-3 ${
+                            isDarkMode ? 'bg-dark-bg-tertiary' : 'bg-blue-100'
+                        } rounded-lg`}>
+                            <Mail className={`w-6 h-6 ${
+                            isDarkMode ? 'text-web3-blue-light' : 'text-blue-600'
+                            }`} />
+                        </div>
+                        <div>
+                            <p className="font-medium">Email</p>
+                            <a href="mailto:contact@example.com" className={`${
+                            isDarkMode ? 'text-web3-blue-light hover:text-web3-blue-glow' : 'text-blue-600 hover:underline'
+                            }`}>
+                            sakhareliyayash.com
+                            </a>
+                        </div>
+                        </div>
+                        <div className="flex items-center gap-4">
+                        <div className={`p-3 ${
+                            isDarkMode ? 'bg-dark-bg-tertiary' : 'bg-blue-100'
+                        } rounded-lg`}>
+                            <Phone className={`w-6 h-6 ${
+                            isDarkMode ? 'text-web3-blue-light' : 'text-blue-600'
+                            }`} />
+                        </div>
+                        <div>
+                            <p className="font-medium">Phone</p>
+                            <a href="tel:+1234567890" className={`${
+                            isDarkMode ? 'text-web3-blue-light hover:text-web3-blue-glow' : 'text-blue-600 hover:underline'
+                            }`}>
+                            +91 9106968615
+                            </a>
+                        </div>
+                        </div>
+                        <div className="flex items-center gap-4">
+                        <div className={`p-3 ${
+                            isDarkMode ? 'bg-dark-bg-tertiary' : 'bg-blue-100'
+                        } rounded-lg`}>
+                            <MapPin className={`w-6 h-6 ${
+                            isDarkMode ? 'text-web3-blue-light' : 'text-blue-600'
+                            }`} />
+                        </div>
+                        <div>
+                            <p className="font-medium">Location</p>
+                            <p className={`${isDarkMode ? 'text-gray-400' : 'text-gray-600'}`}>Vadodara, Gujarat</p>
+                        </div>
+                        </div>
+                    </div>
+                </div>
                 </motion.div>
 
             </div>
