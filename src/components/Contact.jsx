@@ -92,6 +92,7 @@ const Contact = () => {
                     </div>
                 </div>
 
+                            {/* Contact Icons */}
                 <div>
                     <h3 className="text-2xl font-semibold mb-6">Connect With Me</h3>
                     <div className="flex gap-4">
@@ -135,6 +136,14 @@ const Contact = () => {
                 </div>
                 </motion.div>
 
+                <motion.div
+                initial={{ opacity: 0, x: 50 }}
+                whileInView={{ opacity: 1, x: 0 }}
+                transition={{ duration: 0.5 }}
+                viewport={{ once: true }}
+                >
+
+                </motion.div>
             </div>
         </div>
     </section>
