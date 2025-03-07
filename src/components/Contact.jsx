@@ -1,9 +1,11 @@
-import React, { useEffect, useState} from 'react'
+import React, { useEffect, useState, useRef} from 'react'
 import { useSelector } from 'react-redux'
 import { motion } from 'framer-motion'
+import emailjs from '@emailjs/browser';
 import { Send, Mail, Phone, MapPin, Github, Linkedin, Twitter, CheckCircle } from 'lucide-react';
 
 const Contact = () => {
+    const form = useRef()
     const isDarkMode =  useSelector((state) => state.theme.darkMode)
 
     const [formState, setFormState] = useState({
@@ -164,7 +166,7 @@ const Contact = () => {
                 viewport={{ once: true }}
                 >
                 {/* Contact Form */}
-                    <form className='space-y-6'>
+                    <form ref={form} onSubmit={handleSubmit} className='space-y-6'>
                         <div className='grid grid-cols-1 lg:grid-cols-2 gap-6'>
                             <motion.div
                             initial={{ opacity: 0, y: 20 }}
