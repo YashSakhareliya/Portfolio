@@ -14,6 +14,12 @@ const Contact = () => {
       });
       const [isSubmitting, setIsSubmitting] = useState(false);
       const [isSubmitted, setIsSubmitted] = useState(false);
+
+      const handleChange = (event) => {
+        setFormState({...formState, [event.target.name]: event.target.value });
+      };
+      
+      
   return (
     <section className={`py-20 px-4 ${ isDarkMode ? 'bg-dark-bg-primary text-gray-50' : ' bg-gray-50 text-gray-900'}`}>
         <div className='container mx-auto'>
