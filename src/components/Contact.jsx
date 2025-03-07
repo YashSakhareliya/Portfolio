@@ -241,7 +241,50 @@ const Contact = () => {
                                 : 'border-gray-300 bg-white focus:ring-blue-500'
                             } focus:ring-2 focus:border-transparent`}
                             />
-                        </motion.div>
+                            </motion.div>
+
+                            <motion.div
+                            initial={{ opacity: 0, y: 20 }}
+                            animate={{ opacity: 1, y: 0 }}
+                            transition={{ delay: 0.5 }}
+                            className="flex items-center gap-4"
+                            >
+                            <motion.button
+                            whileHover={{ scale: 1.05 }}
+                            whileTap={{ scale: 0.95 }}
+                            disabled={isSubmitting}
+                            className={`flex items-center gap-2 px-6 py-3 rounded-lg ${
+                                isDarkMode 
+                                ? 'bg-web3-gradient shadow-web3' 
+                                : 'bg-blue-600 hover:bg-blue-700'
+                            } text-white font-medium 
+                                ${isSubmitting ? 'opacity-70 cursor-not-allowed' : ''}`}
+                            >
+                            {isSubmitting ? (
+                                <>
+                                <div className="w-5 h-5 border-2 border-white border-t-transparent rounded-full animate-spin" />
+                                Sending...
+                                </>
+                            ) : (
+                                <>
+                                <Send className="w-5 h-5" />
+                                Send Message
+                                </>
+                            )}
+                            </motion.button>
+                                {isSubmitted && (
+                                <motion.span
+                                    initial={{ opacity: 0, x: 20 }}
+                                    animate={{ opacity: 1, x: 0 }}
+                                    className={`flex items-center gap-2 ${
+                                    isDarkMode ? 'text-green-400' : 'text-green-600'
+                                    }`}
+                                >
+                                    <CheckCircle className="w-5 h-5" />
+                                    Message sent successfully!
+                                </motion.span>
+                                )}
+                            </motion.div>
                     </form>
 
                 </motion.div>
