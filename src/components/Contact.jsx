@@ -108,7 +108,7 @@ const Contact = () => {
                         <Github className="w-6 h-6" />
                         </motion.a>
                         <motion.a
-                        href="https://linkedin.com"
+                        href="https://www.linkedin.com/in/yash-sakhareliya/"
                         target="_blank"
                         rel="noopener noreferrer"
                         whileHover={{ scale: 1.1 }}
@@ -120,7 +120,7 @@ const Contact = () => {
                         <Linkedin className="w-6 h-6" />
                         </motion.a>
                         <motion.a
-                        href="https://twitter.com"
+                        href="https://x.com/SakhareliyaYash"
                         target="_blank"
                         rel="noopener noreferrer"
                         whileHover={{ scale: 1.1 }}
