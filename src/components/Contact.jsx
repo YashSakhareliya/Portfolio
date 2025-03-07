@@ -26,13 +26,35 @@ const Contact = () => {
         setIsSubmitting(true);
 
         // submit form
-
-        setIsSubmitting(false);
-        setIsSubmitted(true);
-        setFormState({ name: '', email: '', subject: '', message: '' });
+        emailjs
+        .send(
+            import.meta.env.VITE_APP_EMAILJS_SERVICE_ID,
+            import.meta.env.VITE_APP_EMAILJS_TEMPLATE_ID,
+            {
+            from_name: form.name,
+            to_name: "JavaScript Mastery",
+            from_email: form.email,
+            to_email: "sujata@jsmastery.pro",
+            message: form.message,
+            },
+            import.meta.env.VITE_APP_EMAILJS_PUBLIC_KEY
+        )
+        .then(
+            () => {
+                setIsSubmitting(false);
+                setIsSubmitted(true);
+                setFormState({ name: '', email: '', subject: '', message: '' });
+                // Reset success message after 3 seconds
+                setTimeout(() => setIsSubmitted(false), 3000);
+            }
+        )
+        .catch( (err) => {
+            setIsSubmitting(false);
+            alert("Ahh, something went wrong. Please try again.");
+        })
+        
     
-        // Reset success message after 3 seconds
-        setTimeout(() => setIsSubmitted(false), 3000);
+        
 
       }
       
