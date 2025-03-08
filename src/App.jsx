@@ -1,7 +1,7 @@
-import React, {useState} from "react";
+import React, {useState, useEffect} from "react";
 import { BrowserRouter } from "react-router-dom";
 import { useSelector } from "react-redux";
-import { Blog, Contact, Experience, Footer, Navbar } from "./components";
+import { Blog, Contact, Experience, Footer, Navbar, Preloader } from "./components";
 import Hero from "./components/Hero";
 import About from "./components/About";
 import Projects from "./components/Projects";
@@ -30,7 +30,7 @@ function App() {
       <div className="relative w-full overflow-hidden">
 
         {/* Preaload coming soon */}
-        
+        <Preloader  onComplete={handlePreloaderComplete}/>
 
         {/* main content */}
         <div className="transition-colors duration-300">
