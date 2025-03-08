@@ -62,7 +62,7 @@ const Hero = () => {
             <motion.div
                 key={i}
                 className={`absolute w-2 h-2 rounded-full ${isDarkMode 
-                    ? 'bg-web3-blue-glow/30' : 'bg-dark-bg-tertiary'
+                    ? 'bg-web3-blue-glow/30' : 'bg-web3-blue-light'
                 }`}
                 style={{
                     top: `${Math.random() * 100}%`,
