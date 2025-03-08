@@ -1,4 +1,4 @@
-import React from "react";
+import React, {useState} from "react";
 import { BrowserRouter } from "react-router-dom";
 import { useSelector } from "react-redux";
 import { Blog, Contact, Experience, Footer, Navbar } from "./components";
@@ -7,12 +7,30 @@ import About from "./components/About";
 import Projects from "./components/Projects";
 
 function App() {
+  const [isLoading, setIsLoading] = useState(true);
+
   const darkMode = useSelector((state) => state.theme.darkMode)
+
+  useEffect(() => {
+    // Apply dark mode class to document
+    if (darkMode) {
+      document.documentElement.classList.add('dark');
+    } else {
+      document.documentElement.classList.remove('dark');
+    }
+  }, [darkMode]);
+
+
+  const handlePreloaderComplete = () => {
+    setIsLoading(false);
+  };
+
   return (
     <BrowserRouter>
       <div className="relative w-full overflow-hidden">
 
         {/* Preaload coming soon */}
+        
 
         {/* main content */}
         <div className="transition-colors duration-300">
