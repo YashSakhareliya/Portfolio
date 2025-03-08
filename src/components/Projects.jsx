@@ -53,7 +53,7 @@ const projects = [
     {
         "id": 4,
         "title": "Blogger",
-        "category": "open-source",
+        "category": "web",
         "image": "https://images.unsplash.com/photo-1522202176988-66273c2fd55f?auto=format&fit=crop&w=800&q=80",
         "description": "A blogging platform built with React, Appwrite, and TinyMCE, allowing users to write, post, edit, and delete blog entries.",
         "tags": ["React", "Appwrite", "TinyMCE", "JavaScript"],
