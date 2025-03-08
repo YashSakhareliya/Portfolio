@@ -51,41 +51,41 @@ const projects = [
       }
     },
     {
-      id: 4,
-      title: 'Open Source UI Library',
-      category: 'open-source',
-      image: 'https://images.unsplash.com/photo-1555066931-4365d14bab8c?auto=format&fit=crop&w=800&q=80',
-      description: 'A comprehensive UI component library for React applications with accessibility built-in.',
-      tags: ['React', 'TypeScript', 'Storybook', 'Jest'],
-      links: {
-        github: 'https://github.com',
-        live: 'https://example.com'
-      }
+        "id": 4,
+        "title": "Blogger",
+        "category": "open-source",
+        "image": "https://images.unsplash.com/photo-1522202176988-66273c2fd55f?auto=format&fit=crop&w=800&q=80",
+        "description": "A blogging platform built with React, Appwrite, and TinyMCE, allowing users to write, post, edit, and delete blog entries.",
+        "tags": ["React", "Appwrite", "TinyMCE", "JavaScript"],
+        "links": {
+          "github": "https://github.com/yashsakhareliya/blogger",
+          "live": "https://blogger-inky-delta.vercel.app/"
+        }
     },
-    {
-      id: 5,
-      title: 'AI Content Generator',
-      category: 'ai',
-      image: 'https://images.unsplash.com/photo-1620712943543-bcc4688e7485?auto=format&fit=crop&w=800&q=80',
-      description: 'Tool that leverages GPT-4 to generate high-quality content for blogs, social media, and marketing.',
-      tags: ['Python', 'OpenAI API', 'React', 'FastAPI'],
-      links: {
-        github: 'https://github.com',
-        live: 'https://example.com'
-      },
-    },
-    {
-      id: 6,
-      title: 'Developer Productivity Tool',
-      category: 'open-source',
-      image: 'https://images.unsplash.com/photo-1498050108023-c5249f4df085?auto=format&fit=crop&w=800&q=80',
-      description: 'CLI tool that automates repetitive tasks in the development workflow, saving hours of work.',
-      tags: ['Node.js', 'TypeScript', 'CLI', 'Jest'],
-      links: {
-        github: 'https://github.com',
-        live: 'https://example.com'
-      }
-    }
+    // {
+    //   id: 5,
+    //   title: 'AI Content Generator',
+    //   category: 'ai',
+    //   image: 'https://images.unsplash.com/photo-1620712943543-bcc4688e7485?auto=format&fit=crop&w=800&q=80',
+    //   description: 'Tool that leverages GPT-4 to generate high-quality content for blogs, social media, and marketing.',
+    //   tags: ['Python', 'OpenAI API', 'React', 'FastAPI'],
+    //   links: {
+    //     github: 'https://github.com',
+    //     live: 'https://example.com'
+    //   },
+    // },
+    // {
+    //   id: 6,
+    //   title: 'Developer Productivity Tool',
+    //   category: 'open-source',
+    //   image: 'https://images.unsplash.com/photo-1498050108023-c5249f4df085?auto=format&fit=crop&w=800&q=80',
+    //   description: 'CLI tool that automates repetitive tasks in the development workflow, saving hours of work.',
+    //   tags: ['Node.js', 'TypeScript', 'CLI', 'Jest'],
+    //   links: {
+    //     github: 'https://github.com',
+    //     live: 'https://example.com'
+    //   }
+    // }
 ];
 const Projects = () => {
     const isDarkMode = useSelector((state) => state.theme.darkMode)
