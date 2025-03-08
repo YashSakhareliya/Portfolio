@@ -22,7 +22,7 @@ const Preloader = ({ onComplete}) => {
     
         return () => clearInterval(interval);
     }, []);
-    
+
     useEffect(() => {
         if (progress === 100) {
           // Add a small delay before completing the animation
@@ -72,7 +72,8 @@ const Preloader = ({ onComplete}) => {
                 ease: "easeOut"
               }}
             >
-              <Yash className="w-12 h-12 text-white" />
+              {/* <Yash className="w-12 h-12 text-white" /> */}
+              <img src={Yash} alt="yash" className="w-12 h-12 text-white"/>
               
               {/* Pulse effect */}
               <motion.div
