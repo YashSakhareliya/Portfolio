@@ -73,7 +73,7 @@ const Preloader = ({ onComplete}) => {
               }}
             >
               {/* <Yash className="w-12 h-12 text-white" /> */}
-              <img src={Yash} alt="yash" className="w-12 h-12 text-white"/>
+              <img src={Yash} alt="yash" className="w-20 h-20  text-white"/>
               
               {/* Pulse effect */}
               <motion.div
