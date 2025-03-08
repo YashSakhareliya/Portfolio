@@ -35,7 +35,7 @@ const skills = [
 const stats = [
     {
       icon: <Code2 className="w-8 h-8" />,
-      value: '15+',
+      value: '10+',
       label: 'Projects Completed',
       description: 'From web apps to AI solutions',
       color: 'from-blue-500 to-blue-600',
