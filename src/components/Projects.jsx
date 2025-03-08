@@ -2,6 +2,7 @@ import React,{ useState } from 'react'
 import { useSelector } from 'react-redux';
 import { Github, ExternalLink, Code, Brain, Globe, Rocket } from 'lucide-react';
 import { motion, AnimatePresence } from 'framer-motion';
+import { Portfolio, Blogger } from '../assets';
 
 // projects categories
 const categories = [
@@ -29,7 +30,7 @@ const projects = [
       id: 2,
       title: 'Portfolio',
       category: 'web',
-      image: 'https://images.unsplash.com/photo-1460925895917-afdab827c52f?auto=format&fit=crop&w=800&q=80',
+      image: Portfolio,
       description: 'Modern portfolio website with AI features and 3D animations using React, Three.js, and TailwindCSS.',
       tags: ['React', 'Three.js', 'TailwindCSS', 'Framer Motion'],
       links: {
@@ -54,7 +55,7 @@ const projects = [
         "id": 4,
         "title": "Blogger",
         "category": "web",
-        "image": "https://images.unsplash.com/photo-1522202176988-66273c2fd55f?auto=format&fit=crop&w=800&q=80",
+        "image": Blogger,
         "description": "A blogging platform built with React, Appwrite, and TinyMCE, allowing users to write, post, edit, and delete blog entries.",
         "tags": ["React", "Appwrite", "TinyMCE", "JavaScript"],
         "links": {
