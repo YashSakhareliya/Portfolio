@@ -30,7 +30,7 @@ const Footer = () => {
             className="flex gap-4"
             >
                 <motion.a
-                href="https://github.com"
+                href="https://github.com/Yashsakhareliya"
                 target="_blank"
                 rel="noopener noreferrer"
                 whileHover={{ scale: 1.1, y: -3 }}
@@ -42,7 +42,7 @@ const Footer = () => {
                 <Github className="w-5 h-5" />
                 </motion.a>
                 <motion.a
-                href="https://linkedin.com"
+                href="https://www.linkedin.com/in/yash-sakhareliya/"
                 target="_blank"
                 rel="noopener noreferrer"
                 whileHover={{ scale: 1.1, y: -3 }}
@@ -54,7 +54,7 @@ const Footer = () => {
                 <Linkedin className="w-5 h-5" />
                 </motion.a>
                 <motion.a
-                href="https://twitter.com"
+                href="https://x.com/SakhareliyaYash"
                 target="_blank"
                 rel="noopener noreferrer"
                 whileHover={{ scale: 1.1, y: -3 }}
