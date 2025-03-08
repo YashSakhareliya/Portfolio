@@ -4,9 +4,38 @@ import { Zap } from 'lucide-react';
 import { useSelector } from 'react-redux';
 import { Yash } from '../assets';
 
-const Preloader = () => {
+const Preloader = ({ onComplete}) => {
+    const [progress, setProgress] = useState(0);
+    const [isComplete, setIsComplete] = useState(false);
 
     const isDarkMode = useSelector((state) => state.theme.darkMode)
+
+
+    useEffect(() => {
+        // Simulate loading progress
+        const interval = setInterval(() => {
+          setProgress(prev => {
+            const newProgress = prev + Math.random() * 15;
+            return newProgress >= 100 ? 100 : newProgress;
+          });
+        }, 200);
+    
+        return () => clearInterval(interval);
+    }, []);
+    
+    useEffect(() => {
+        if (progress === 100) {
+          // Add a small delay before completing the animation
+          const timeout = setTimeout(() => {
+            setIsComplete(true);
+            // Add another delay before calling onComplete to allow exit animation to play
+            setTimeout(onComplete, 1000);
+          }, 500);
+          
+          return () => clearTimeout(timeout);
+        }
+    }, [progress, onComplete]);
+
   return (
     <AnimatePresence mode="wait">
       {!isComplete && (
